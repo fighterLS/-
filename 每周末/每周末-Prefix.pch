@@ -1,0 +1,36 @@
+//
+//  每周末-Prefix.pch
+//  每周末
+//
+//  Created by 李赛 on 15/11/10.
+//  Copyright © 2015年 李赛. All rights reserved.
+//
+
+#ifndef ____Prefix_pch
+#define ____Prefix_pch
+#import <YYKit.h>
+#import <UIScrollView+APParallaxHeader.h>
+#import "UIView+Loading.h"
+#import "MBProgressHUD+Add.h"
+#import "LSModel.h"
+#import <Masonry.h>
+#import <UIImage+BlurredFrame.h>
+#import <UIImage+ImageEffects.h>
+#import "AppDelegate.h"
+#import "BaseNavigationController.h"
+#import "LoginViewController.h"
+#import "XLButtonBarPagerTabStripViewController.h"
+#endif
+
+#define kBaseUrlStr_Phone @"http://api.lanrenzhoumo.com/"
+
+#define kScaleFrom_iPhone6_Desgin(_X_) (_X_ * (MIN(kScreenHeight, kScreenWidth)/375))
+//根据iPhone5适配6和plus屏幕尺寸
+#define kScaleFrom_iPhone5_Desgin(_X_) (_X_ * (MIN(kScreenHeight, kScreenWidth)/320))
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+
+#define COLOR(x,y,z) [UIColor colorWithRed:x/255.0f green:y/255.0f blue:z/255.0f alpha:1.0]
+
+
+#pragma mark ---SDK包管理------
+const static NSString *APIKeyGaoDe = @"e11828db4d98229200c679cc6d34ac51";///<高德地图APIKey

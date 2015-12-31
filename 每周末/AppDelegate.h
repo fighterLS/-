@@ -11,7 +11,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIStoryboard *storyboard;
 
-
+- (void)setupLoginViewController;
+- (void)setupHomePageController;
 @end
 

@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import "HomePageViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +18,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self gaoDeMapKitInit];
+     self.storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+
     // Override point for customization after application launch.
     return YES;
 }
@@ -42,4 +47,25 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark --convenince Method-----
+- (void)setupLoginViewController{
+    
+    LoginViewController *loginVC=[self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:loginVC]];
+}
+
+- (void)setupHomePageController{
+    HomePageViewController *rootVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomePageViewController"];
+    
+    [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:rootVC]];
+}
+
+#pragma mark---SDK包管理 ---
+-(void)gaoDeMapKitInit
+{
+    //地图
+    [MAMapServices sharedServices].apiKey = (NSString *)APIKeyGaoDe;
+    [AMapSearchServices sharedServices].apiKey = (NSString *)APIKeyGaoDe;
+}
 @end

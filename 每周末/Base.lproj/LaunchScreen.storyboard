@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Copyright (c) 2015年. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG5-xi-Ryx">
+                                <rect key="frame" x="191" y="567" width="217.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启动页logo" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-a6-mqm">
+                                <rect key="frame" x="225.5" y="274" width="149" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="2xd-3i-fyK"/>
+                                    <constraint firstAttribute="height" constant="52" id="PYH-6A-XoE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FGI-a6-mqm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9lh-az-qzj"/>
+                            <constraint firstItem="DG5-xi-Ryx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZT0-JH-ZqB"/>
+                            <constraint firstItem="FGI-a6-mqm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="h6T-et-Fss"/>
+                            <constraint firstItem="DG5-xi-Ryx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="273.75" id="iPC-9r-GJG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +45,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="启动页logo" width="149" height="52"/>
+    </resources>
 </document>
