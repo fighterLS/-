@@ -51,9 +51,11 @@ const CGFloat BackGroupHeight =375;
         [self.view endLoading];
         
         _detailModel=detailResult;
-        _contentTableView.delegate=self;
-        _contentTableView.dataSource=self;
-        [_contentTableView reloadData];
+        if (detailResult.description.count > 0) {
+            _contentTableView.delegate=self;
+            _contentTableView.dataSource=self;
+            [_contentTableView reloadData];
+        }
         [self.view configBlankPage:EaseBlankPageTypeTweet hasData:(detailResult.description.count > 0) hasError:(error != nil) reloadButtonBlock:^(id sender) {
             [self sendRequest];
         }];

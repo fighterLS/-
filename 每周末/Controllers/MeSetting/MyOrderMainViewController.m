@@ -23,7 +23,7 @@
     [self.buttonBarView setBackgroundColor:[UIColor whiteColor]];
     [self.buttonBarView.selectedBar setBackgroundColor:COLOR(167, 127, 1)];
     self.buttonBarView.selectedBarHeight=2;
-    self.buttonBarView.cellWidthFloat=self.view.bounds.size.width/2;
+    self.buttonBarView.cellWidthFloat=self.view.bounds.size.width/2-7;
     
     self.changeCurrentIndexProgressiveBlock = ^void(XLButtonBarViewCell *oldCell, XLButtonBarViewCell *newCell, CGFloat progressPercentage, BOOL changeCurrentIndex, BOOL animated){
         if (changeCurrentIndex) {

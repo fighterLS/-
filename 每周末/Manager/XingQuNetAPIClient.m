@@ -52,7 +52,7 @@
     if (!aPath || aPath.length <= 0) {
         return;
     }
-//    aPath =[aPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     aPath = [aPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     switch (method) {
         case Get:{
@@ -61,8 +61,9 @@
             if (params) {
                 [localPath appendString:params.description];
             }
-            [self GET:aPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
+            [self GET:aPath parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id error = [self handleResponse:responseObject autoShowError:autoShowError];
                 if (error) {
                     responseObject = [self loadResponseWithPath:localPath];
@@ -73,179 +74,62 @@
                     }
                     block(responseObject, nil);
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 !autoShowError || [self showError:error];
                 id responseObject = [self loadResponseWithPath:localPath];
                 block(responseObject, error);
             }];
-            break;}
+            
+            break;
+        }
         case Post:{
-            [self POST:aPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+            [self POST:aPath parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id error = [self handleResponse:responseObject autoShowError:autoShowError];
                 if (error) {
                     block(nil, error);
                 }else{
                     block(responseObject, nil);
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-           
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 !autoShowError || [self showError:error];
                 block(nil, error);
             }];
             break;}
         case Put:{
-            [self PUT:aPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          
+            [self PUT:aPath parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id error = [self handleResponse:responseObject autoShowError:autoShowError];
                 if (error) {
                     block(nil, error);
                 }else{
                     block(responseObject, nil);
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 !autoShowError || [self showError:error];
                 block(nil, error);
             }];
             break;}
         case Delete:{
-            [self DELETE:aPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self DELETE:aPath parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id error = [self handleResponse:responseObject autoShowError:autoShowError];
                 if (error) {
                     block(nil, error);
                 }else{
                     block(responseObject, nil);
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 !autoShowError || [self showError:error];
                 block(nil, error);
-            }];}
-        default:
-            break;
-    }
-    
-}
-
--(void)requestJsonDataWithPath:(NSString *)aPath file:(NSDictionary *)file withParams:(NSDictionary *)params withMethodType:(NetworkMethod)method andBlock:(void (^)(id, NSError *))block{
-    //log请求数据
-   aPath = [aPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    // Data
-    NSData *data;
-    NSString *name, *fileName;
-    
-    if (file) {
-        UIImage *image = file[@"image"];
-    
-        data = UIImageJPEGRepresentation(image, 1.0);
-        if ((float)data.length/1024 > 1000) {
-            data = UIImageJPEGRepresentation(image, 1024*1000.0/(float)data.length);
-        }
-        
-        name = file[@"name"];
-        fileName = file[@"fileName"];
-    }
-    
-    switch (method) {
-        case Post:{
-            
-            AFHTTPRequestOperation *operation = [self POST:aPath parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                if (file) {
-                    [formData appendPartWithFileData:data name:name fileName:fileName mimeType:@"image/jpeg"];
-                }
-            } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"\n===========response===========\n%@:\n%@", aPath, responseObject);
-                id error = [self handleResponse:responseObject autoShowError:YES];
-                if (error) {
-                    block(nil, error);
-                }else{
-                    block(responseObject, nil);
-                }
-
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"\n===========response===========\n%@:\n%@", aPath, error);
-                [self showError:error];
-                block(nil, error);
             }];
-            [operation start];
-            
-            break;
         }
         default:
             break;
     }
-}
-
-- (void)uploadImage:(UIImage *)image path:(NSString *)path name:(NSString *)name
-       successBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-       failureBlock:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
-      progerssBlock:(void (^)(CGFloat progressValue))progress{
-
-    NSData *data = UIImageJPEGRepresentation(image, 1.0);
-    if ((float)data.length/1024 > 1000) {
-        data = UIImageJPEGRepresentation(image, 1024*1000.0/(float)data.length);
-    }
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyyMMddHHmmss";
-    NSString *str = [formatter stringFromDate:[NSDate date]];
-    NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
-
-    AFHTTPRequestOperation *operation = [self POST:path parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:data name:name fileName:fileName mimeType:@"image/jpeg"];
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       
-        id error = [self handleResponse:responseObject autoShowError:YES];
-        if (error && failure) {
-            failure(operation, error);
-        }else{
-            success(operation, responseObject);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (failure) {
-            failure(operation, error);
-        }
-    }];
-    
-    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-        CGFloat progressValue = (float)totalBytesWritten/(float)totalBytesExpectedToWrite;
-        if (progress) {
-            progress(progressValue);
-        }
-    }];
-    [operation start];
-}
-
-- (void)uploadVoice:(NSString *)file
-           withPath:(NSString *)path
-         withParams:(NSDictionary*)params
-           andBlock:(void (^)(id data, NSError *error))block {
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:file]) {
-        return;
-    }
-    
-    NSData *data = [NSData dataWithContentsOfFile:file];
-    NSString *fileName = [file lastPathComponent];
-
-    NSLog(@"\nuploadVoiceSize\n%@ : %.0f", fileName, (float)data.length/1024);
-    
-    AFHTTPRequestOperation *operation = [self POST:path parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"audio/amr"];
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"\n===========response===========\n%@:\n%@", path, responseObject);
-        id error = [self handleResponse:responseObject autoShowError:YES];
-        if (error) {
-            block(nil, error);
-        }else{
-            block(responseObject, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"\n===========response===========\n%@:\n%@", path, error);
-        [self showError:error];
-        block(nil, error);
-    }];
-    
-    [operation start];
 }
 
 #pragma  mark---- convienence Method-----
@@ -258,7 +142,7 @@
     if (resultCode.intValue != 0) {
         error = [NSError errorWithDomain:kBaseUrlStr_Phone code:resultCode.intValue userInfo:responseJSON];
         if (resultCode.intValue == 1000 || resultCode.intValue == 3207) {
-     
+            
         }else{
             if (autoShowError) {
                 [self showError:error];

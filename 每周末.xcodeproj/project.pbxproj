@@ -751,6 +751,7 @@
 				TargetAttributes = {
 					C29FFD8B1C0D665400956820 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 55PDB742LN;
 					};
 					C29FFDA41C0D665400956820 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1042,13 +1043,14 @@
 			baseConfigurationReference = 85505FBB004D875B435C1F64 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/每周末/每周末-Prefix.pch";
 				INFOPLIST_FILE = "每周末/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumavision.meizhoumo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1060,13 +1062,14 @@
 			baseConfigurationReference = 843FBB39F1459920BFDE1EB8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/每周末/每周末-Prefix.pch";
 				INFOPLIST_FILE = "每周末/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumavision.meizhoumo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

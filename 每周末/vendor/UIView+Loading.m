@@ -198,14 +198,20 @@ static char LoadingViewKey, BlankPageViewKey;
         //        加载失败
         if (!_reloadButton) {
             _reloadButton = [[UIButton alloc] initWithFrame:CGRectZero];
-            [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
+            [_reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
+            [_reloadButton setTitleColor:COLOR(212, 210, 198) forState:UIControlStateNormal];
+            _reloadButton.layer.masksToBounds=YES;
+            _reloadButton.layer.cornerRadius=5.0;
+            _reloadButton.layer.borderWidth=1.0;
+            _reloadButton.layer.borderColor=COLOR(212, 210, 198).CGColor;
+//            [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
             _reloadButton.adjustsImageWhenHighlighted = YES;
             [_reloadButton addTarget:self action:@selector(reloadButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:_reloadButton];
             [_reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.equalTo(self);
                 make.top.equalTo(_tipLabel.mas_bottom);
-                make.size.mas_equalTo(CGSizeMake(160, 60));
+                make.size.mas_equalTo(CGSizeMake(100, 30));
             }];
         }
         _reloadButton.hidden = NO;

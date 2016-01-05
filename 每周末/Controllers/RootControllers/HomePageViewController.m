@@ -13,7 +13,9 @@
 #import "NavigationControllerDelegate.h"
 #import "HomePageModel.h"
 @interface HomePageViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+{
+    NSInteger pageNumber;
+}
 @property (nonatomic, strong) sortMenuView *myPopMenu;
 @property (nonatomic, strong) NSMutableArray *contentListArray;
 @end
@@ -22,8 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-     [self sendRequest];
+   // [self headerView];
+    _contentListArray=[[NSMutableArray alloc]initWithCapacity:0];
+    pageNumber=1;
+    [self sendRequest];
+    [self footerView];
     _contentTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view.
 }
@@ -32,9 +37,34 @@
     [super viewWillAppear:animated];
      
 }
+#pragma mark ---refresh---
+- (void)headerView
+{
+    __weak __typeof(self) weakSelf = self;
+    _contentListArray=[[NSMutableArray alloc]initWithCapacity:0];
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+      pageNumber=1;
+      [weakSelf sendRequest];
+    }];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    self.contentTableView.mj_header.automaticallyChangeAlpha = YES;
+    // 马上进入刷新状态
+    [self.contentTableView.mj_header beginRefreshing];
+}
 
-- (void)sendRequest{
+- (void)footerView
+{
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
+    self.contentTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(sendRequest)];
+    // 设置了底部inset
+    self.contentTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    // 忽略掉底部inset
+    self.contentTableView.mj_footer.ignoredScrollViewContentInsetBottom = 0;
+}
 
+- (void)sendRequest
+{
     [self.view beginLoading];
    @weakify(self);
     [HomePageModel getHomePageModelBlock:^(NSMutableArray *homePageArray, NSError *error) {
@@ -42,16 +72,18 @@
         [self.view endLoading];
         if (homePageArray.count>0) {
              _contentTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-            _contentListArray=[NSMutableArray arrayWithArray:homePageArray];
+            [_contentListArray addObjectsFromArray:homePageArray];
             _contentTableView.delegate=self;
             _contentTableView.dataSource=self;
             [_contentTableView reloadData];
-        
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+            pageNumber++;
         }
         [self.view configBlankPage:EaseBlankPageTypeTweet hasData:(homePageArray.count > 0) hasError:(error != nil) reloadButtonBlock:^(id sender) {
             [self sendRequest];
         }];
-    }];
+    } withPage:pageNumber];
     
 }
 

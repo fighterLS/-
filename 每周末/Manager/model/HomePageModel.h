@@ -12,7 +12,7 @@
 @class DetailResult,ActivityLocation,ActivitySort,ActivityTime,ActivityDescription;
 @interface HomePageModel : NSObject
 
-+(void)getHomePageModelBlock:(void (^)(NSMutableArray *homePageArray, NSError *error))block;
++(void)getHomePageModelBlock:(void (^)(NSMutableArray *homePageArray, NSError *error))block withPage:(NSInteger)page;
 +(void)getDetailModelBlock:(void (^)(DetailResult *detailResult, NSError *error))block withLeo_id:(NSString *)leo_id session_id:(NSString *)session_id v:(NSString *)v;
 @end
 

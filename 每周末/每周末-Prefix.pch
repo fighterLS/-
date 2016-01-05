@@ -20,6 +20,7 @@
 #import "BaseNavigationController.h"
 #import "LoginViewController.h"
 #import "XLButtonBarPagerTabStripViewController.h"
+#import <MJRefresh.h>
 #endif
 
 #define kBaseUrlStr_Phone @"http://api.lanrenzhoumo.com/"
