@@ -10,28 +10,31 @@
 #import "TCellDetailText.h"
 #import "TCellDetailImageText.h"
 #import "TCellDetailImage.h"
+#import "TCellDetailHeader.h"
 #import "ScrollPageView.h"
 #import "OrderPageViewController.h"
 #import "OpenAMapURLRequestViewController.h"
+#import "PopMenu.h"
+#import "YYPhotoGroupView.h"
 const CGFloat BackGroupHeight =375;
-@interface DetailPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface DetailPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,ScrollPageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *bottomHoldView;
 
 @property (weak, nonatomic) IBOutlet UILabel *orderFee;
 @property (nonatomic, strong) DetailResult *detailModel;
 @property (nonatomic, strong) ScrollPageView *scrollPageView;
+@property (nonatomic, strong) PopMenu *myPopMenu;//shareView
 @end
 
 @implementation DetailPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _bottomHoldView.hidden=YES;
     [self sendRequest];
     // Do any additional setup after loading the view.
 }
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -54,6 +57,7 @@ const CGFloat BackGroupHeight =375;
         if (detailResult.description.count > 0) {
             _contentTableView.delegate=self;
             _contentTableView.dataSource=self;
+            _bottomHoldView.hidden=NO;
             [_contentTableView reloadData];
         }
         [self.view configBlankPage:EaseBlankPageTypeTweet hasData:(detailResult.description.count > 0) hasError:(error != nil) reloadButtonBlock:^(id sender) {
@@ -87,11 +91,11 @@ const CGFloat BackGroupHeight =375;
 {
     if (indexPath.section==0) {
         if (indexPath.row==0) {
-           TCellDetailText *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailText"];
+           TCellDetailHeader *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailHeader"];
             if (vCell==nil) {
-             vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailText" forIndexPath:indexPath];
+             vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailHeader" forIndexPath:indexPath];
             }
-            vCell.textLB.text=_detailModel.title;
+            vCell.headerTitle.text=_detailModel.title;
             return vCell;
         }
         else
@@ -200,7 +204,20 @@ const CGFloat BackGroupHeight =375;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==1) {// @"活动详情";
+    if(indexPath.section==0)
+    {
+        CGFloat cellHeight=0.0;
+        if (indexPath.row==0) {
+            cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-16];
+            cellHeight+=140;
+        }else
+        {
+            cellHeight=[_detailModel.address heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-60];
+            cellHeight+=20;
+        }
+        return cellHeight;
+    }
+   else if (indexPath.section==1) {// @"活动详情";
         
          ActivityDescription *activityModel=[ActivityDescription modelWithJSON:[_detailModel.description objectAtIndex:indexPath.row]];
         CGFloat cellHeight=0.0;
@@ -240,20 +257,7 @@ const CGFloat BackGroupHeight =375;
         }
         return cellHeight;
     }
-    else if(indexPath.section==0)
-    {
-        CGFloat cellHeight=0.0;
-        if (indexPath.row==0) {
-           cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-16];
-            cellHeight+=10;
-        }else
-        {
-            cellHeight=[_detailModel.address heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-60];
-            cellHeight+=20;
-        }
-        return cellHeight;
-    }
-        
+   
         return 0;
 
 }
@@ -309,6 +313,7 @@ const CGFloat BackGroupHeight =375;
 {
     if (_scrollPageView==nil) {
         _scrollPageView=[[ScrollPageView alloc]initWithFrame:CGRectMake(0, 0, MIN(kScreenHeight, kScreenWidth), kScaleFrom_iPhone6_Desgin(BackGroupHeight)) views:_homePageModel.front_cover_image_list infos:nil];
+        _scrollPageView.scrollDelegate=self;
     }
     return _scrollPageView;
 }
@@ -328,12 +333,56 @@ const CGFloat BackGroupHeight =375;
     [headView addSubview:titleLabel];
     return headView;
 }
-
+-(void)topRecommendContact:(UIGestureRecognizer *)sender
+{
+  
+}
+-(void)clickImageAtIndex:(NSInteger)index withView:(UIImageView *)imgView
+{
+   
+    NSMutableArray *items = [NSMutableArray new];
+    NSArray *images = _homePageModel.front_cover_image_list;
+    
+    for (NSUInteger i = 0, max = images.count; i < max; i++) {
+        YYPhotoGroupItem *item = [YYPhotoGroupItem new];
+     
+        item.largeImageURL = [images objectAtIndex:i];
+        [items addObject:item];
+    
+    }
+    
+    YYPhotoGroupView *v = [[YYPhotoGroupView alloc] initWithGroupItems:items];
+    [v presentFromImageView:imgView toContainer:self.navigationController.view animated:YES completion:nil];
+}
 - (IBAction)oderDetailButtonAction:(UIButton *)sender {
     OrderPageViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"OrderPageViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)shareBtnAction:(UIBarButtonItem *)sender {
+    NSArray *menuItems = @[
+                           [MenuItem itemWithTitle:@"微信朋友" iconName:@"微信朋友" index:0],
+                           [MenuItem itemWithTitle:@"微信朋友圈" iconName:@"微信朋友圈" index:1],
+                           [MenuItem itemWithTitle:@"新浪微博" iconName:@"微博" index:2],
+                           [MenuItem itemWithTitle:@"QQ" iconName:@"QQ" index:3],
+                           ];
+    if (!_myPopMenu) {
+        _myPopMenu = [[PopMenu alloc] initWithFrame:kScreen_Bounds items:menuItems];
+        _myPopMenu.perRowItemCount = 2;
+        _myPopMenu.menuAnimationType = kPopMenuAnimationTypeSina;
+    }
+    @weakify(self);
+    _myPopMenu.didSelectedItemCompletion = ^(MenuItem *selectedItem){
+        @strongify(self);
+        switch (selectedItem.index) {
+           // NSLog(@"%@",selectedItem.title);
+        }
+    };
+    [_myPopMenu showMenuAtView:[UIApplication sharedApplication].keyWindow startPoint:CGPointMake(0, -100) endPoint:CGPointMake(0, -100)];
+}
+- (IBAction)collectionBtnAction:(UIBarButtonItem *)sender {
+    
+}
 
 /*
 #pragma mark - Navigation

@@ -38,6 +38,7 @@
 		C22874271C0D8DD000966280 /* FunctionIntroManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C22874261C0D8DD000966280 /* FunctionIntroManager.m */; };
 		C228742B1C0D943E00966280 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = C228742A1C0D943E00966280 /* UIView+Loading.m */; };
 		C25A8D9B1C33A99E000F9540 /* ScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C25A8D9A1C33A99E000F9540 /* ScrollPageView.m */; };
+		C267B91F1C414AB7007B7057 /* TCellDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C267B91E1C414AB7007B7057 /* TCellDetailHeader.m */; };
 		C27429F11C34AF6400ED7993 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27429F01C34AF6400ED7993 /* SetingViewController.m */; };
 		C27429F41C34F30200ED7993 /* ModifyUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27429F31C34F30200ED7993 /* ModifyUserInfoViewController.m */; };
 		C2742A071C350BE400ED7993 /* MyOrderMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2742A061C350BE400ED7993 /* MyOrderMainViewController.m */; };
@@ -64,6 +65,9 @@
 		C2A2275D1C2F951500DE9CD1 /* TCellOrderSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A2275C1C2F951500DE9CD1 /* TCellOrderSelectButton.m */; };
 		C2B0244C1C2598AC007D3E78 /* ObjcRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B024491C2598AC007D3E78 /* ObjcRuntime.m */; };
 		C2B0244D1C2598AC007D3E78 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0244B1C2598AC007D3E78 /* UIViewController+Swizzle.m */; };
+		C2B81AA41C43EA9800146342 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA21C43EA9800146342 /* Default-568@2x.png */; };
+		C2B81AA51C43EA9800146342 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA31C43EA9800146342 /* Default-568.png */; };
+		C2B81AAA1C43EC7C00146342 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */; };
 		C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D25B4F1C1FEDF600F162C3 /* PKYStepper.m */; };
 		C2D25B681C200F8D00F162C3 /* sortMenuCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D25B641C200F8D00F162C3 /* sortMenuCollectionCell.m */; };
 		C2D25B691C200F8D00F162C3 /* sortMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D25B651C200F8D00F162C3 /* sortMenuCollectionCell.xib */; };
@@ -161,6 +165,8 @@
 		C228742A1C0D943E00966280 /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
 		C25A8D991C33A99E000F9540 /* ScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPageView.h; sourceTree = "<group>"; };
 		C25A8D9A1C33A99E000F9540 /* ScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPageView.m; sourceTree = "<group>"; };
+		C267B91D1C414AB7007B7057 /* TCellDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellDetailHeader.h; sourceTree = "<group>"; };
+		C267B91E1C414AB7007B7057 /* TCellDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCellDetailHeader.m; sourceTree = "<group>"; };
 		C27429EF1C34AF6400ED7993 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
 		C27429F01C34AF6400ED7993 /* SetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetingViewController.m; sourceTree = "<group>"; };
 		C27429F21C34F30200ED7993 /* ModifyUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyUserInfoViewController.h; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 		C2B024491C2598AC007D3E78 /* ObjcRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcRuntime.m; sourceTree = "<group>"; };
 		C2B0244A1C2598AC007D3E78 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
 		C2B0244B1C2598AC007D3E78 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
+		C2B81AA21C43EA9800146342 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
+		C2B81AA31C43EA9800146342 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
+		C2B81AA81C43EC7C00146342 /* YYPhotoGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoGroupView.h; sourceTree = "<group>"; };
+		C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoGroupView.m; sourceTree = "<group>"; };
 		C2D25B4E1C1FEDF600F162C3 /* PKYStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKYStepper.h; sourceTree = "<group>"; };
 		C2D25B4F1C1FEDF600F162C3 /* PKYStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKYStepper.m; sourceTree = "<group>"; };
 		C2D25B631C200F8D00F162C3 /* sortMenuCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sortMenuCollectionCell.h; sourceTree = "<group>"; };
@@ -402,6 +412,7 @@
 		C22873911C0D8D7E00966280 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C2B81AA71C43EC7C00146342 /* PhotoBrowser */,
 				C2742A081C350C6000ED7993 /* XLPagerTabStrip */,
 				C2B024471C2598AC007D3E78 /* runtime */,
 				C2D25B4D1C1FEDF600F162C3 /* PKYStepper */,
@@ -579,6 +590,8 @@
 		C29FFD8F1C0D665400956820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2B81AA21C43EA9800146342 /* Default-568@2x.png */,
+				C2B81AA31C43EA9800146342 /* Default-568.png */,
 				C29FFD901C0D665400956820 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -624,6 +637,8 @@
 				C27714411C16A78700F188F5 /* TCellDetailImage.m */,
 				C27714461C16ABAF00F188F5 /* TCellDetailImageText.h */,
 				C27714471C16ABAF00F188F5 /* TCellDetailImageText.m */,
+				C267B91D1C414AB7007B7057 /* TCellDetailHeader.h */,
+				C267B91E1C414AB7007B7057 /* TCellDetailHeader.m */,
 			);
 			name = "详情";
 			sourceTree = "<group>";
@@ -637,6 +652,15 @@
 				C2B0244B1C2598AC007D3E78 /* UIViewController+Swizzle.m */,
 			);
 			path = runtime;
+			sourceTree = "<group>";
+		};
+		C2B81AA71C43EC7C00146342 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C2B81AA81C43EC7C00146342 /* YYPhotoGroupView.h */,
+				C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		C2D25B4D1C1FEDF600F162C3 /* PKYStepper */ = {
@@ -793,8 +817,10 @@
 				C2742A151C350C6000ED7993 /* XLButtonBarViewCell.xib in Resources */,
 				C2F6A5701C33D3D1004FD392 /* AMap.bundle in Resources */,
 				C2D25B691C200F8D00F162C3 /* sortMenuCollectionCell.xib in Resources */,
+				C2B81AA41C43EA9800146342 /* Default-568@2x.png in Resources */,
 				C2FD07DD1C0D97DD00FB7CED /* Main.storyboard in Resources */,
 				C29FFD9F1C0D665400956820 /* LaunchScreen.storyboard in Resources */,
+				C2B81AA51C43EA9800146342 /* Default-568.png in Resources */,
 				C29FFD9C1C0D665400956820 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,9 +893,11 @@
 				C228741F1C0D8D7E00966280 /* XHRealTimeBlur.m in Sources */,
 				C2A2275D1C2F951500DE9CD1 /* TCellOrderSelectButton.m in Sources */,
 				C2742A161C350C6000ED7993 /* XLButtonBarPagerTabStripViewController.m in Sources */,
+				C267B91F1C414AB7007B7057 /* TCellDetailHeader.m in Sources */,
 				C228740B1C0D8D7E00966280 /* MenuButton.m in Sources */,
 				C228740C1C0D8D7E00966280 /* MenuItem.m in Sources */,
 				C2742A131C350C6000ED7993 /* XLButtonBarView.m in Sources */,
+				C2B81AAA1C43EC7C00146342 /* YYPhotoGroupView.m in Sources */,
 				C228737A1C0D8CC400966280 /* RegisterViewController.m in Sources */,
 				C27714421C16A78700F188F5 /* TCellDetailImage.m in Sources */,
 				C2F6A5711C33D3D1004FD392 /* BaseMapViewController.m in Sources */,
@@ -1043,7 +1071,8 @@
 			baseConfigurationReference = 85505FBB004D875B435C1F64 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1052,8 +1081,9 @@
 				INFOPLIST_FILE = "每周末/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumavision.meizhoumo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
 			};
 			name = Debug;
 		};
@@ -1062,7 +1092,8 @@
 			baseConfigurationReference = 843FBB39F1459920BFDE1EB8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1071,8 +1102,9 @@
 				INFOPLIST_FILE = "每周末/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumavision.meizhoumo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
 			};
 			name = Release;
 		};

@@ -75,15 +75,14 @@
             button.clipsToBounds=YES;
             button.contentMode=UIViewContentModeScaleAspectFill;
             [button setImageWithURL:[NSURL URLWithString:[_imageArray objectAtIndex:i]] placeholder:[UIImage imageWithColor:[UIColor lightGrayColor]]];
-//            [button setImageWithURL:[NSURL URLWithString:[_imageArray objectAtIndex:i]] forState:UIControlStateNormal placeholder:[UIImage imageWithColor:[UIColor lightGrayColor]]];
-////            button.contentMode=UIViewContentModeScaleAspectFit;
-//         
-//           [button addTarget:self action:@selector(topRecommendContact:) forControlEvents:UIControlEventTouchUpInside];
+        
+           
             button.frame=CGRectMake(_frame.size.width*i, 0, _frame.size.width, _frame.size.height);
             
             [scroll addSubview:button];
         }
-        
+        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(topRecommendContact:)];
+        [scroll addGestureRecognizer:tapGesture];
         UIImageView *noteView=[[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-30,self.bounds.size.width,30)];
         [noteView setImage:[UIImage imageNamed:@"首页推荐-banner_bg640"]];
         
@@ -114,7 +113,7 @@
     return self;
 }
 
--(void)topRecommendContact:(UIButton *)sender
+-(void)topRecommendContact:(UIGestureRecognizer *)sender
 {
     if([_scrollDelegate respondsToSelector:@selector(topRecommendContact:)])
     {

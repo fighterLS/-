@@ -60,7 +60,7 @@
         _userNickName.text=modifyString;
     };
     vc.userInfoChangeTextFile.placeholder=@"请修改您的昵称";
-    vc.userInfoChangeTextFile.text=_userNickName.text;
+     vc.modifyTextPremery=_userNickName.text;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -71,7 +71,7 @@
         _telephoneNumLB.text=modifyString;
     };
     vc.userInfoChangeTextFile.placeholder=@"请修改您的电话号码";
-     vc.userInfoChangeTextFile.text=_telephoneNumLB.text;
+     vc.modifyTextPremery=_telephoneNumLB.text;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

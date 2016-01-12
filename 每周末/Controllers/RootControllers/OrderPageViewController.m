@@ -42,7 +42,7 @@
     }
     else if (section==1)
     {
-        return @"列表详情";
+        return @"票务类型";
     }
     else
     {

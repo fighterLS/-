@@ -17,6 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _userInfoChangeTextFile.text=_modifyTextPremery;
+    if ([self.title isEqualToString:@"昵称修改"]) {
+        _userInfoChangeTextFile.placeholder=@"请修改您的昵称";
+    }else
+    {
+        _userInfoChangeTextFile.placeholder=@"请修改您的电话号码";
+    }
+    
+    
     // Do any additional setup after loading the view.
 }
 - (IBAction)saveAndChangeUserInfoAction:(UIBarButtonItem *)sender {

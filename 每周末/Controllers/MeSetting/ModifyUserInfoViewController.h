@@ -11,4 +11,5 @@ typedef void(^ ModifyUserInfoBlock)(NSString *modifyString);
 @interface ModifyUserInfoViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *userInfoChangeTextFile;
 @property (nonatomic,copy) ModifyUserInfoBlock modifyUserBlock;
+@property (nonatomic, copy) NSString *modifyTextPremery;
 @end
