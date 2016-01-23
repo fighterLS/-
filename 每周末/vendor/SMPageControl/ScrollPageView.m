@@ -56,33 +56,35 @@
         scroll.showsHorizontalScrollIndicator = NO;
         scroll.showsVerticalScrollIndicator = NO;
         scroll.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-       // [scroll.panGestureRecognizer addTarget:self action:@selector(scrollHandlePan:)];
+       
         [self addSubview:scroll];
        
         for (int i=0;i<pages;i++) {
             
-            UIImageView *button = [[UIImageView alloc]init];//[UIButton buttonWithType:UIButtonTypeCustom];
+            UIImageView *button = [[UIImageView alloc]init];//
+            UIButton *selectButton= [UIButton buttonWithType:UIButtonTypeCustom];
+            selectButton.backgroundColor=[UIColor clearColor];
+            [selectButton addTarget:self action:@selector(topRecommendContact:) forControlEvents:UIControlEventTouchUpInside];
             if (i==0) {
-                button.tag =i;
+                selectButton.tag =i;
             }else if(i==pages-1)
             {
-                button.tag=i-2;
+                selectButton.tag=i-2;
             }else
             {
-                button.tag=i-1;
+                selectButton.tag=i-1;
             }
                 
             button.clipsToBounds=YES;
             button.contentMode=UIViewContentModeScaleAspectFill;
-            [button setImageWithURL:[NSURL URLWithString:[_imageArray objectAtIndex:i]] placeholder:[UIImage imageWithColor:[UIColor lightGrayColor]]];
+            [button setImageWithURL:[NSURL URLWithString:[_imageArray objectAtIndex:i]] placeholder:[UIImage imageNamed:@"默认图"]];
         
-           
             button.frame=CGRectMake(_frame.size.width*i, 0, _frame.size.width, _frame.size.height);
-            
+            selectButton.frame=CGRectMake(_frame.size.width*i, 0, _frame.size.width, _frame.size.height);
             [scroll addSubview:button];
+            [scroll addSubview:selectButton];
         }
-        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(topRecommendContact:)];
-        [scroll addGestureRecognizer:tapGesture];
+        
         UIImageView *noteView=[[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-30,self.bounds.size.width,30)];
         [noteView setImage:[UIImage imageNamed:@"首页推荐-banner_bg640"]];
         
@@ -113,8 +115,9 @@
     return self;
 }
 
--(void)topRecommendContact:(UIGestureRecognizer *)sender
+-(void)topRecommendContact:(UIButton *)sender
 {
+    
     if([_scrollDelegate respondsToSelector:@selector(topRecommendContact:)])
     {
         [_scrollDelegate topRecommendContact:sender ];

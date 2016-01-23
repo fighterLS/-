@@ -194,43 +194,30 @@ static char LoadingViewKey, BlankPageViewKey;
     }];
     
     _reloadButtonBlock = nil;
-    if (hasError) {
+
         //        加载失败
         if (!_reloadButton) {
             _reloadButton = [[UIButton alloc] initWithFrame:CGRectZero];
-            [_reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
-            [_reloadButton setTitleColor:COLOR(212, 210, 198) forState:UIControlStateNormal];
+            [_reloadButton setTitle:@"点击重试" forState:UIControlStateNormal];
+            [_reloadButton setTitleColor:[UIColor colorWithHexString:@"b39954"] forState:UIControlStateNormal];
             _reloadButton.layer.masksToBounds=YES;
-            _reloadButton.layer.cornerRadius=5.0;
+          
             _reloadButton.layer.borderWidth=1.0;
-            _reloadButton.layer.borderColor=COLOR(212, 210, 198).CGColor;
-//            [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
+            _reloadButton.layer.borderColor=[UIColor colorWithHexString:@"b39954"].CGColor;
             _reloadButton.adjustsImageWhenHighlighted = YES;
             [_reloadButton addTarget:self action:@selector(reloadButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:_reloadButton];
             [_reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.equalTo(self);
                 make.top.equalTo(_tipLabel.mas_bottom);
-                make.size.mas_equalTo(CGSizeMake(100, 30));
+                make.size.mas_equalTo(CGSizeMake(149, 44));
             }];
         }
         _reloadButton.hidden = NO;
         _reloadButtonBlock = block;
         [_monkeyView setImage:[UIImage imageNamed:@"blankpage_image_Hi"]];
-        _tipLabel.text = @"貌似出了点差错";
-    }else{
-        //        空白数据
-        if (_reloadButton) {
-            _reloadButton.hidden = YES;
-        }
-        NSString *imageName, *tipStr;
-      
-        imageName = @"blankpage_image_loadFail";
-        tipStr = @"貌似出了点差错";
-        
-        [_monkeyView setImage:[UIImage imageNamed:imageName]];
-        _tipLabel.text = tipStr;
-    }
+        _tipLabel.text = @"数据加载失败";
+
 }
 
 - (void)reloadButtonClicked:(id)sender{

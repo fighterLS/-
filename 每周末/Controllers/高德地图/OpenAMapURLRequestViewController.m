@@ -21,8 +21,8 @@
 {
     self.destination = [[MAPointAnnotation alloc] init];
     
-    self.destination.coordinate = CLLocationCoordinate2DMake(39.923034, 116.388988);
-    self.destination.title = @"谁说这个应用打不开";
+    self.destination.coordinate = CLLocationCoordinate2DMake([_location.lat floatValue], [_location.lon floatValue]);
+    self.destination.title = _locationName;
 }
 
 #pragma mark - Life Cycle

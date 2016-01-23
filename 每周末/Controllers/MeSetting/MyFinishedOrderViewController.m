@@ -9,6 +9,7 @@
 
 #import "MyFinishedOrderViewController.h"
 #import "MyOrderTableViewCell.h"
+#import "MyOrderDetailViewController.h"
 @interface MyFinishedOrderViewController ()
 
 @end
@@ -30,12 +31,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyOrderTableViewCell *vCell=[tableView dequeueReusableCellWithIdentifier:@"MyOrderTableViewCell" forIndexPath:indexPath];
-    if (indexPath.row%2==0) {
-        vCell.backgroundColor=[UIColor clearColor];
-    }else
-    {
-        vCell.backgroundColor=[UIColor whiteColor];
-    }
+//    if (indexPath.row%2==0) {
+//        vCell.backgroundColor=[UIColor clearColor];
+//    }else
+//    {
+//        vCell.backgroundColor=[UIColor whiteColor];
+//    }
     return vCell;
 }
 
@@ -65,8 +66,35 @@
 // Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    MyOrderDetailViewController *vc=[storyboard instantiateViewControllerWithIdentifier:@"MyOrderDetailViewController"];
+    [[self presentingVC].navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+-(UIViewController *)presentingVC{
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIViewController *result = window.rootViewController;
+    while (result.presentedViewController) {
+        result = result.presentedViewController;
+    }
+    if ([result isKindOfClass:[UINavigationController class]]) {
+        result = [(UINavigationController *)result topViewController];
+    }
+    return result;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

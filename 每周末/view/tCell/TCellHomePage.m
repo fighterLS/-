@@ -16,22 +16,17 @@
 
 - (void) setHomePage:(Result *)homePage
 {
-    [_headerImage setImageWithURL:[NSURL URLWithString:[homePage.front_cover_image_list firstObject]] placeholder:[UIImage imageWithColor:[UIColor lightGrayColor]]];
+    [_headerImage setImageWithURL:[NSURL URLWithString:[homePage.front_cover_image_list firstObject]] placeholder:[UIImage imageNamed:@"默认图"]];
     _titleLB.text=homePage.title;
-    _subTitleLB.text=[NSString stringWithFormat:@"%@·%@",homePage.poi_name,homePage.category];
+//    NSAttributedString
+//    NSMutableAttributedString *attributeString=[[NSMutableAttributedString alloc]initWithString:homePage.price_info attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"b39954"]}];
+//    _payInfoLB.attributedText=attributeString;
+    _payInfoLB.text=[NSString stringWithFormat:@"%@",@(homePage.price)];
 }
-//- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view
-//{
-//    CGRect rectInSuperview = [tableView convertRect:self.frame toView:view];
-//    
-//    float distanceFromCenter = CGRectGetHeight(view.frame)/2 - CGRectGetMinY(rectInSuperview);
-//    float difference = CGRectGetHeight(self.headerImage.frame) - CGRectGetHeight(self.frame);
-//    float move = (distanceFromCenter / CGRectGetHeight(view.frame)) * difference;
-//    
-//    CGRect imageRect = self.headerImage.frame;
-//    imageRect.origin.y = -(difference/2)+move;
-//    self.headerImage.frame = imageRect;
-//}
+- (IBAction)colloctionBtnAction:(UIButton *)sender {
+    sender.selected=!sender.selected;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

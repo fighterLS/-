@@ -36,9 +36,11 @@
     temporaryBarButtonItem.title = @"";
     temporaryBarButtonItem.target = self;
     UIImage *backButtonBackgroundImage = [UIImage imageNamed:@"返回"];
-    backButtonBackgroundImage = [backButtonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 40, 0, 40)];
-    id appearance=[UIBarButtonItem appearanceWhenContainedIn:[self.navigationController class], nil];
-    [appearance setBackButtonBackgroundImage:backButtonBackgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+ 
+//    id appearance=[UIBarButtonItem appearanceWhenContainedIn:[self.navigationController class], nil];
+//    [appearance setBackButtonBackgroundImage:backButtonBackgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [temporaryBarButtonItem setBackButtonBackgroundImage:[backButtonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, backButtonBackgroundImage.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [temporaryBarButtonItem setBackButtonTitlePositionAdjustment:UIOffsetMake(-400.f, 0) forBarMetrics:UIBarMetricsDefault];
     temporaryBarButtonItem.action = @selector(goBack_Swizzle);
     return temporaryBarButtonItem;
 }

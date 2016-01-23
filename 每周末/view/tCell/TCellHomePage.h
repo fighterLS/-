@@ -11,10 +11,11 @@
 @interface TCellHomePage : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLB;
-@property (weak, nonatomic) IBOutlet UILabel *subTitleLB;
-@property (weak, nonatomic) IBOutlet UIButton *timeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
-@property (weak, nonatomic) IBOutlet UIButton *payBtn;
+@property (weak, nonatomic) IBOutlet UIButton *timeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *payInfoLB;
+@property (weak, nonatomic) IBOutlet UILabel *locationLB;
+
 @property (strong, nonatomic) Result *homePage;
 //- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
 @end

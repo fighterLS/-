@@ -10,4 +10,6 @@
 
 @interface OpenAMapURLRequestViewController : BaseMapViewController
 @property (nonatomic, strong) MAPointAnnotation * destination;
+@property (nonatomic, strong) ActivityLocation *location;
+@property (nonatomic, copy) NSString *locationName;
 @end

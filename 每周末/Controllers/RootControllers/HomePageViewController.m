@@ -56,13 +56,33 @@
 - (void)footerView
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
-    self.contentTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(sendRequest)];
+    self.contentTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     // 设置了底部inset
     self.contentTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 忽略掉底部inset
     self.contentTableView.mj_footer.ignoredScrollViewContentInsetBottom = 0;
 }
-
+- (void)loadMoreData
+{
+    @weakify(self);
+    [HomePageModel getHomePageModelBlock:^(NSMutableArray *homePageArray, NSError *error) {
+        @strongify(self)
+        if (homePageArray.count>0) {
+            _contentTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+            [_contentListArray addObjectsFromArray:homePageArray];
+            _contentTableView.delegate=self;
+            _contentTableView.dataSource=self;
+            [_contentTableView reloadData];
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+            pageNumber++;
+        }
+        [self.view configBlankPage:EaseBlankPageTypeTweet hasData:(homePageArray.count > 0) hasError:(error != nil) reloadButtonBlock:^(id sender) {
+            [self sendRequest];
+        }];
+    } withPage:pageNumber];
+    
+}
 - (void)sendRequest
 {
     [self.view beginLoading];

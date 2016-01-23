@@ -15,7 +15,7 @@
 #import "OrderPageViewController.h"
 #import "OpenAMapURLRequestViewController.h"
 #import "PopMenu.h"
-#import "YYPhotoGroupView.h"
+#import "MJPhotoBrowser.h"
 const CGFloat BackGroupHeight =375;
 @interface DetailPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,ScrollPageViewDelegate>
 
@@ -127,7 +127,7 @@ const CGFloat BackGroupHeight =375;
             if (vCell==nil) {
                 vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailImage" forIndexPath:indexPath];
             }
-            [vCell.detailImage setImageWithURL:[NSURL URLWithString:activityModel.content] placeholder:[UIImage imageWithColor:[UIColor lightGrayColor]]];
+            [vCell.detailImage setImageWithURL:[NSURL URLWithString:activityModel.content] placeholder:[UIImage imageNamed:@"默认图"]];
              return vCell;   //活动描述
         }
     
@@ -279,7 +279,8 @@ const CGFloat BackGroupHeight =375;
 {
     if (indexPath.section==0&&indexPath.row==1) {
         OpenAMapURLRequestViewController *subViewController =[[OpenAMapURLRequestViewController alloc] init];
-
+        subViewController.location=_detailModel.location;
+        subViewController.locationName=_detailModel.poi;
         [self.navigationController pushViewController:subViewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -333,27 +334,22 @@ const CGFloat BackGroupHeight =375;
     [headView addSubview:titleLabel];
     return headView;
 }
--(void)topRecommendContact:(UIGestureRecognizer *)sender
+-(void)topRecommendContact:(UIButton *)sender
 {
-  
-}
--(void)clickImageAtIndex:(NSInteger)index withView:(UIImageView *)imgView
-{
-   
-    NSMutableArray *items = [NSMutableArray new];
-    NSArray *images = _homePageModel.front_cover_image_list;
-    
-    for (NSUInteger i = 0, max = images.count; i < max; i++) {
-        YYPhotoGroupItem *item = [YYPhotoGroupItem new];
-     
-        item.largeImageURL = [images objectAtIndex:i];
-        [items addObject:item];
-    
+    NSMutableArray *photos = [NSMutableArray arrayWithCapacity:_homePageModel.front_cover_image_list.count];
+    for (int i = 0; i <_homePageModel.front_cover_image_list.count; i++) {
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        photo.url=[NSURL URLWithString:[_homePageModel.front_cover_image_list objectAtIndex:i]];
+ 
+        [photos addObject:photo];
     }
-    
-    YYPhotoGroupView *v = [[YYPhotoGroupView alloc] initWithGroupItems:items];
-    [v presentFromImageView:imgView toContainer:self.navigationController.view animated:YES completion:nil];
+    // 2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = sender.tag; // 弹出相册时显示的第一张图片是？
+    browser.photos = photos; // 设置所有的图片
+    [browser show];
 }
+
 - (IBAction)oderDetailButtonAction:(UIButton *)sender {
     OrderPageViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"OrderPageViewController"];
     [self.navigationController pushViewController:vc animated:YES];
@@ -380,8 +376,8 @@ const CGFloat BackGroupHeight =375;
     };
     [_myPopMenu showMenuAtView:[UIApplication sharedApplication].keyWindow startPoint:CGPointMake(0, -100) endPoint:CGPointMake(0, -100)];
 }
-- (IBAction)collectionBtnAction:(UIBarButtonItem *)sender {
-    
+- (IBAction)collectionBtnAction:(UIButton *)sender {
+    sender.selected=!sender.selected;
 }
 
 /*

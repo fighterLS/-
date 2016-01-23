@@ -51,6 +51,14 @@
 		C2742A1E1C350DE000ED7993 /* MyOnGoingOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2742A1D1C350DE000ED7993 /* MyOnGoingOrderViewController.m */; };
 		C2742A251C350ED700ED7993 /* MyOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2742A231C350ED700ED7993 /* MyOrderTableViewCell.m */; };
 		C2742A261C350ED700ED7993 /* MyOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2742A241C350ED700ED7993 /* MyOrderTableViewCell.xib */; };
+		C276FC8F1C51179100830999 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC7E1C51179100830999 /* MJPhoto.m */; };
+		C276FC901C51179100830999 /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C276FC7F1C51179100830999 /* MJPhotoBrowser.bundle */; };
+		C276FC911C51179100830999 /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC811C51179100830999 /* MJPhotoBrowser.m */; };
+		C276FC921C51179100830999 /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC831C51179100830999 /* MJPhotoLoadingView.m */; };
+		C276FC931C51179100830999 /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC851C51179100830999 /* MJPhotoProgressView.m */; };
+		C276FC941C51179100830999 /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC871C51179100830999 /* MJPhotoToolbar.m */; };
+		C276FC951C51179100830999 /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC891C51179100830999 /* MJPhotoView.m */; };
+		C276FC971C51179100830999 /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276FC8D1C51179100830999 /* UIImageView+MJWebCache.m */; };
 		C277143F1C16A77500F188F5 /* TCellDetailText.m in Sources */ = {isa = PBXBuildFile; fileRef = C277143E1C16A77500F188F5 /* TCellDetailText.m */; };
 		C27714421C16A78700F188F5 /* TCellDetailImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714411C16A78700F188F5 /* TCellDetailImage.m */; };
 		C27714481C16ABAF00F188F5 /* TCellDetailImageText.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714471C16ABAF00F188F5 /* TCellDetailImageText.m */; };
@@ -68,6 +76,8 @@
 		C2B81AA41C43EA9800146342 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA21C43EA9800146342 /* Default-568@2x.png */; };
 		C2B81AA51C43EA9800146342 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA31C43EA9800146342 /* Default-568.png */; };
 		C2B81AAA1C43EC7C00146342 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */; };
+		C2C9A8101C53B44C00D9498D /* MyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9A80F1C53B44C00D9498D /* MyOrderDetailViewController.m */; };
+		C2C9A8131C53C0DC00D9498D /* TCellMyCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9A8121C53C0DC00D9498D /* TCellMyCollection.m */; };
 		C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D25B4F1C1FEDF600F162C3 /* PKYStepper.m */; };
 		C2D25B681C200F8D00F162C3 /* sortMenuCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D25B641C200F8D00F162C3 /* sortMenuCollectionCell.m */; };
 		C2D25B691C200F8D00F162C3 /* sortMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D25B651C200F8D00F162C3 /* sortMenuCollectionCell.xib */; };
@@ -82,6 +92,7 @@
 		C2F6A5751C33D3F7004FD392 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F6A5741C33D3F7004FD392 /* MANaviAnnotationView.m */; };
 		C2FD07DD1C0D97DD00FB7CED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FD07DC1C0D97DD00FB7CED /* Main.storyboard */; };
 		C2FD07E01C0D985A00FB7CED /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FD07DF1C0D985A00FB7CED /* MBProgressHUD+Add.m */; };
+		C2FE60D61C524453003384EC /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FE60D51C524453003384EC /* MyCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +200,21 @@
 		C2742A221C350ED700ED7993 /* MyOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderTableViewCell.h; sourceTree = "<group>"; };
 		C2742A231C350ED700ED7993 /* MyOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderTableViewCell.m; sourceTree = "<group>"; };
 		C2742A241C350ED700ED7993 /* MyOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderTableViewCell.xib; sourceTree = "<group>"; };
+		C276FC7D1C51179100830999 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		C276FC7E1C51179100830999 /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		C276FC7F1C51179100830999 /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		C276FC801C51179100830999 /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		C276FC811C51179100830999 /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		C276FC821C51179100830999 /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		C276FC831C51179100830999 /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		C276FC841C51179100830999 /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		C276FC851C51179100830999 /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		C276FC861C51179100830999 /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		C276FC871C51179100830999 /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		C276FC881C51179100830999 /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		C276FC891C51179100830999 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
+		C276FC8C1C51179100830999 /* UIImageView+MJWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MJWebCache.h"; sourceTree = "<group>"; };
+		C276FC8D1C51179100830999 /* UIImageView+MJWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MJWebCache.m"; sourceTree = "<group>"; };
 		C277143D1C16A77500F188F5 /* TCellDetailText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellDetailText.h; sourceTree = "<group>"; };
 		C277143E1C16A77500F188F5 /* TCellDetailText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCellDetailText.m; sourceTree = "<group>"; };
 		C27714401C16A78700F188F5 /* TCellDetailImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellDetailImage.h; sourceTree = "<group>"; };
@@ -223,6 +249,10 @@
 		C2B81AA31C43EA9800146342 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
 		C2B81AA81C43EC7C00146342 /* YYPhotoGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoGroupView.h; sourceTree = "<group>"; };
 		C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoGroupView.m; sourceTree = "<group>"; };
+		C2C9A80E1C53B44C00D9498D /* MyOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailViewController.h; sourceTree = "<group>"; };
+		C2C9A80F1C53B44C00D9498D /* MyOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailViewController.m; sourceTree = "<group>"; };
+		C2C9A8111C53C0DC00D9498D /* TCellMyCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellMyCollection.h; sourceTree = "<group>"; };
+		C2C9A8121C53C0DC00D9498D /* TCellMyCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCellMyCollection.m; sourceTree = "<group>"; };
 		C2D25B4E1C1FEDF600F162C3 /* PKYStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKYStepper.h; sourceTree = "<group>"; };
 		C2D25B4F1C1FEDF600F162C3 /* PKYStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKYStepper.m; sourceTree = "<group>"; };
 		C2D25B631C200F8D00F162C3 /* sortMenuCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sortMenuCollectionCell.h; sourceTree = "<group>"; };
@@ -244,6 +274,8 @@
 		C2FD07DC1C0D97DD00FB7CED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C2FD07DE1C0D985A00FB7CED /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		C2FD07DF1C0D985A00FB7CED /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		C2FE60D41C524453003384EC /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
+		C2FE60D51C524453003384EC /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		C2FEF5E01C159471005B10B5 /* LSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +388,10 @@
 				C27429F31C34F30200ED7993 /* ModifyUserInfoViewController.m */,
 				C2742A051C350BE400ED7993 /* MyOrderMainViewController.h */,
 				C2742A061C350BE400ED7993 /* MyOrderMainViewController.m */,
+				C2FE60D41C524453003384EC /* MyCollectionViewController.h */,
+				C2FE60D51C524453003384EC /* MyCollectionViewController.m */,
+				C2C9A80E1C53B44C00D9498D /* MyOrderDetailViewController.h */,
+				C2C9A80F1C53B44C00D9498D /* MyOrderDetailViewController.m */,
 			);
 			path = MeSetting;
 			sourceTree = "<group>";
@@ -405,6 +441,8 @@
 				C2A227541C2F946400DE9CD1 /* 订单 */,
 				C228738B1C0D8D6200966280 /* TCellHomePage.h */,
 				C228738C1C0D8D6200966280 /* TCellHomePage.m */,
+				C2C9A8111C53C0DC00D9498D /* TCellMyCollection.h */,
+				C2C9A8121C53C0DC00D9498D /* TCellMyCollection.m */,
 			);
 			path = tCell;
 			sourceTree = "<group>";
@@ -412,6 +450,7 @@
 		C22873911C0D8D7E00966280 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C276FC7A1C51179100830999 /* MJPhotoBrowser */,
 				C2B81AA71C43EC7C00146342 /* PhotoBrowser */,
 				C2742A081C350C6000ED7993 /* XLPagerTabStrip */,
 				C2B024471C2598AC007D3E78 /* runtime */,
@@ -544,6 +583,28 @@
 				C2742A241C350ED700ED7993 /* MyOrderTableViewCell.xib */,
 			);
 			name = MyOrderChildVC;
+			sourceTree = "<group>";
+		};
+		C276FC7A1C51179100830999 /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C276FC7D1C51179100830999 /* MJPhoto.h */,
+				C276FC7E1C51179100830999 /* MJPhoto.m */,
+				C276FC7F1C51179100830999 /* MJPhotoBrowser.bundle */,
+				C276FC801C51179100830999 /* MJPhotoBrowser.h */,
+				C276FC811C51179100830999 /* MJPhotoBrowser.m */,
+				C276FC821C51179100830999 /* MJPhotoLoadingView.h */,
+				C276FC831C51179100830999 /* MJPhotoLoadingView.m */,
+				C276FC841C51179100830999 /* MJPhotoProgressView.h */,
+				C276FC851C51179100830999 /* MJPhotoProgressView.m */,
+				C276FC861C51179100830999 /* MJPhotoToolbar.h */,
+				C276FC871C51179100830999 /* MJPhotoToolbar.m */,
+				C276FC881C51179100830999 /* MJPhotoView.h */,
+				C276FC891C51179100830999 /* MJPhotoView.m */,
+				C276FC8C1C51179100830999 /* UIImageView+MJWebCache.h */,
+				C276FC8D1C51179100830999 /* UIImageView+MJWebCache.m */,
+			);
+			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		C29FFD831C0D665400956820 = {
@@ -817,6 +878,7 @@
 				C2742A151C350C6000ED7993 /* XLButtonBarViewCell.xib in Resources */,
 				C2F6A5701C33D3D1004FD392 /* AMap.bundle in Resources */,
 				C2D25B691C200F8D00F162C3 /* sortMenuCollectionCell.xib in Resources */,
+				C276FC901C51179100830999 /* MJPhotoBrowser.bundle in Resources */,
 				C2B81AA41C43EA9800146342 /* Default-568@2x.png in Resources */,
 				C2FD07DD1C0D97DD00FB7CED /* Main.storyboard in Resources */,
 				C29FFD9F1C0D665400956820 /* LaunchScreen.storyboard in Resources */,
@@ -880,11 +942,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2742A141C350C6000ED7993 /* XLButtonBarViewCell.m in Sources */,
+				C276FC931C51179100830999 /* MJPhotoProgressView.m in Sources */,
 				C228737B1C0D8CC400966280 /* MyInformationViewController.m in Sources */,
 				C27714481C16ABAF00F188F5 /* TCellDetailImageText.m in Sources */,
 				C22412961C0F1A5A00C4D9EE /* HomePageModel.m in Sources */,
 				C228737E1C0D8CC400966280 /* BaseViewController.m in Sources */,
 				C22873F61C0D8D7E00966280 /* JDStatusBarNotification.m in Sources */,
+				C276FC971C51179100830999 /* UIImageView+MJWebCache.m in Sources */,
 				C2B0244D1C2598AC007D3E78 /* UIViewController+Swizzle.m in Sources */,
 				C22873F71C0D8D7E00966280 /* JDStatusBarStyle.m in Sources */,
 				C22873F81C0D8D7E00966280 /* JDStatusBarView.m in Sources */,
@@ -901,23 +965,29 @@
 				C228737A1C0D8CC400966280 /* RegisterViewController.m in Sources */,
 				C27714421C16A78700F188F5 /* TCellDetailImage.m in Sources */,
 				C2F6A5711C33D3D1004FD392 /* BaseMapViewController.m in Sources */,
+				C2C9A8101C53B44C00D9498D /* MyOrderDetailViewController.m in Sources */,
 				C228742B1C0D943E00966280 /* UIView+Loading.m in Sources */,
 				C22873811C0D8CC400966280 /* OrderPageViewController.m in Sources */,
+				C276FC921C51179100830999 /* MJPhotoLoadingView.m in Sources */,
 				C22873FA1C0D8D7E00966280 /* NavigationControllerDelegate.m in Sources */,
 				C22874271C0D8DD000966280 /* FunctionIntroManager.m in Sources */,
 				C228737F1C0D8CC400966280 /* DetailPageViewController.m in Sources */,
+				C2C9A8131C53C0DC00D9498D /* TCellMyCollection.m in Sources */,
 				C2F6A5751C33D3F7004FD392 /* MANaviAnnotationView.m in Sources */,
 				C2D25B681C200F8D00F162C3 /* sortMenuCollectionCell.m in Sources */,
 				C2742A1E1C350DE000ED7993 /* MyOnGoingOrderViewController.m in Sources */,
 				C29FFD941C0D665400956820 /* AppDelegate.m in Sources */,
+				C276FC951C51179100830999 /* MJPhotoView.m in Sources */,
 				C2742A071C350BE400ED7993 /* MyOrderMainViewController.m in Sources */,
 				C22873781C0D8CC400966280 /* ForgetPassWordViewController.m in Sources */,
 				C2B0244C1C2598AC007D3E78 /* ObjcRuntime.m in Sources */,
+				C276FC941C51179100830999 /* MJPhotoToolbar.m in Sources */,
 				C228740D1C0D8D7E00966280 /* PopMenu.m in Sources */,
 				C228737D1C0D8CC400966280 /* BaseNavigationController.m in Sources */,
 				C277143F1C16A77500F188F5 /* TCellDetailText.m in Sources */,
 				C22873801C0D8CC400966280 /* HomePageViewController.m in Sources */,
 				C228740A1C0D8D7E00966280 /* GlowImageView.m in Sources */,
+				C276FC911C51179100830999 /* MJPhotoBrowser.m in Sources */,
 				C25A8D9B1C33A99E000F9540 /* ScrollPageView.m in Sources */,
 				C2742A171C350C6000ED7993 /* XLPagerTabStripViewController.m in Sources */,
 				C22873901C0D8D6200966280 /* TCellHomePage.m in Sources */,
@@ -930,6 +1000,7 @@
 				C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */,
 				C27429F41C34F30200ED7993 /* ModifyUserInfoViewController.m in Sources */,
 				C22873F51C0D8D7E00966280 /* EAIntroView.m in Sources */,
+				C276FC8F1C51179100830999 /* MJPhoto.m in Sources */,
 				C2A227571C2F94AC00DE9CD1 /* TCellOderDetail.m in Sources */,
 				C27429F11C34AF6400ED7993 /* SetingViewController.m in Sources */,
 				C2F6A5721C33D3D1004FD392 /* OpenAMapURLRequestViewController.m in Sources */,
@@ -938,6 +1009,7 @@
 				C224128E1C0F1A3300C4D9EE /* XingQuNetAPIClient.m in Sources */,
 				C22873791C0D8CC400966280 /* LoginViewController.m in Sources */,
 				C22873F41C0D8D7E00966280 /* EAIntroPage.m in Sources */,
+				C2FE60D61C524453003384EC /* MyCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +1073,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1045,6 +1118,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1071,8 +1145,9 @@
 			baseConfigurationReference = 85505FBB004D875B435C1F64 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1083,7 +1158,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1092,8 +1167,9 @@
 			baseConfigurationReference = 843FBB39F1459920BFDE1EB8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1104,7 +1180,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SMPageControl.h"
 @protocol ScrollPageViewDelegate <NSObject>
--(void)topRecommendContact:(UIGestureRecognizer *)sender;
+-(void)topRecommendContact:(UIButton *)sender;
 @end
 @interface ScrollPageView : UIView<UIScrollViewDelegate>
 
