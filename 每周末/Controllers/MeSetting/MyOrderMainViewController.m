@@ -21,14 +21,14 @@
     
     [self.containerView setFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-40)];
     [self.buttonBarView setBackgroundColor:[UIColor whiteColor]];
-    [self.buttonBarView.selectedBar setBackgroundColor:COLOR(167, 127, 1)];
+    [self.buttonBarView.selectedBar setBackgroundColor:[UIColor colorWithHexString:@"b39954"]];
     self.buttonBarView.selectedBarHeight=2;
     self.buttonBarView.cellWidthFloat=self.view.bounds.size.width/2-7;
     
     self.changeCurrentIndexProgressiveBlock = ^void(XLButtonBarViewCell *oldCell, XLButtonBarViewCell *newCell, CGFloat progressPercentage, BOOL changeCurrentIndex, BOOL animated){
         if (changeCurrentIndex) {
-            [oldCell.label setTextColor:[UIColor blackColor]];
-            [newCell.label setTextColor:COLOR(167, 127, 1)];
+            [oldCell.label setTextColor:[UIColor colorWithHexString:@"8c877c"]];
+            [newCell.label setTextColor:[UIColor colorWithHexString:@"b39954"]];
             if (animated) {
                 [UIView animateWithDuration:0.1
                                  animations:^(){

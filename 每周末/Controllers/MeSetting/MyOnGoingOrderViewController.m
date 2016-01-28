@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.view.backgroundColor=[UIColor whiteColor];
      self.tableView.delegate=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"MyOrderTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MyOrderTableViewCell"];
     // Do any additional setup after loading the view.

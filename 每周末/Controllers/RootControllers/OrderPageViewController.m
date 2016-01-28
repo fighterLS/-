@@ -34,23 +34,14 @@
     return 3;
 }
 // Default is 1 if not implemented
-
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section==0) {
-        return 0;
+    if (section==1) {
+        return [self createNormalHeaderView:@"票务类型" withHeight:46];
     }
-    else if (section==1)
-    {
-        return @"票务类型";
-    }
-    else
-    {
-        return 0;
-    }
-
-   
+    return nil;
 }
+
 // fixed font style. use custom view (UILabel) if you want something different
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -102,15 +93,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-        return 110;
+        return 89;
     }
     else if (indexPath.section==1)
     {
-        return 44;
+        return 55;
     }
     else
     {
-        return 44;
+        return 55;
     }
 
 }
@@ -118,13 +109,13 @@
 {
   if (section==1)
     {
-        return 30;
+        return 46;
     }
-   return 0.001;
+   return 0.0000000001;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.001;
+    return 0.0000000001;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -144,6 +135,18 @@
          [_contentTableview deselectRowAtIndexPath:indexPath animated:NO];
           vCell.selectButton.selected=vCell.selected;
      }
+}
+//MARK ---convienice Method---
+-(UIView *)createNormalHeaderView:(NSString *)title withHeight:(CGFloat)height
+{
+    UIView *headView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
+    headView.backgroundColor = [UIColor clearColor];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, height-25, 180, 15)];
+    titleLabel.text=title;
+    [titleLabel setFont:[UIFont systemFontOfSize:14]];
+    titleLabel.textColor=[UIColor colorWithHexString:@"333333"];
+    [headView addSubview:titleLabel];
+    return headView;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

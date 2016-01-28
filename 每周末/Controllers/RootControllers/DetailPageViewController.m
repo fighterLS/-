@@ -189,13 +189,13 @@ const CGFloat BackGroupHeight =375;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section==1) {
-        return [self createNormalHeaderView:@"活动详情" withHeight:40];
+        return [self createNormalHeaderView:@"活动详情" withHeight:60];
     }else if (section==2)
     {
-        return [self createNormalHeaderView:@"预定须知" withHeight:40];
+        return [self createNormalHeaderView:@"预定须知" withHeight:60];
     }else if (section==3)
     {
-        return [self createNormalHeaderView:@"提示" withHeight:40];
+        return [self createNormalHeaderView:@"提示" withHeight:60];
     }else if (section==0)
     {
         return self.scrollPageView;
@@ -208,7 +208,7 @@ const CGFloat BackGroupHeight =375;
     {
         CGFloat cellHeight=0.0;
         if (indexPath.row==0) {
-            cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-16];
+            cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:19] width:kScreenWidth-16];
             cellHeight+=140;
         }else
         {
@@ -223,7 +223,7 @@ const CGFloat BackGroupHeight =375;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:16] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
             cellHeight+=10;
         }else
         {
@@ -236,7 +236,7 @@ const CGFloat BackGroupHeight =375;
         CGFloat cellHeight=0.0;
 
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:16] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
             cellHeight+=10;
         }else
         {
@@ -249,7 +249,7 @@ const CGFloat BackGroupHeight =375;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:16] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
             cellHeight+=10;
         }else
         {
@@ -267,7 +267,7 @@ const CGFloat BackGroupHeight =375;
     if (section==0) {
         return kScaleFrom_iPhone6_Desgin(BackGroupHeight);
     }
-    return 40;
+    return 60;
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -277,11 +277,24 @@ const CGFloat BackGroupHeight =375;
 // Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *vCell=[tableView cellForRowAtIndexPath:indexPath];
     if (indexPath.section==0&&indexPath.row==1) {
         OpenAMapURLRequestViewController *subViewController =[[OpenAMapURLRequestViewController alloc] init];
         subViewController.location=_detailModel.location;
         subViewController.locationName=_detailModel.poi;
         [self.navigationController pushViewController:subViewController animated:YES];
+    }
+ 
+    else if ([vCell isKindOfClass:[TCellDetailImage class]]) {
+        NSMutableArray *photos = [NSMutableArray arrayWithCapacity:0];
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        photo.image=((TCellDetailImage *)vCell).detailImage.image;
+        [photos addObject:photo];
+        // 2.显示相册
+        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+        browser.currentPhotoIndex = 0; // 弹出相册时显示的第一张图片是？
+        browser.photos = photos; // 设置所有的图片
+        [browser show];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -323,14 +336,14 @@ const CGFloat BackGroupHeight =375;
     UIView *headView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
     headView.backgroundColor = [UIColor clearColor];
     
-    UIView *headViewAlpha =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
-    headViewAlpha.backgroundColor = [UIColor whiteColor];
-    headViewAlpha.alpha = 0.5;
-    [headView addSubview:headViewAlpha];
+    UIView *seperateView =  [[UIView alloc]initWithFrame:CGRectMake(8, height-2, kScreenWidth-8, 2)];
+    seperateView.backgroundColor =[UIColor colorWithHexString:@"f2f1f0"];
+    [headView addSubview:seperateView];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 0, 180, height)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, height-35, 180, 20)];
     titleLabel.text=title;
-    titleLabel.backgroundColor=[UIColor clearColor];
+    [titleLabel setFont:[UIFont systemFontOfSize:17]];
+    titleLabel.textColor=[UIColor colorWithHexString:@"333333"];
     [headView addSubview:titleLabel];
     return headView;
 }

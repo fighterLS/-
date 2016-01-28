@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self gaoDeMapKitInit];
      self.storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//    [self setupLoginViewController];
+    [self setupLoginViewController];
     
 //    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
 //    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];

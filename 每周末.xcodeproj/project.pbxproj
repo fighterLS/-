@@ -10,6 +10,7 @@
 		B111DE6ABCCBE21373360A20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D93BD9C27AE6596EABC595 /* libPods.a */; };
 		C224128E1C0F1A3300C4D9EE /* XingQuNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C22412891C0F1A3300C4D9EE /* XingQuNetAPIClient.m */; };
 		C22412961C0F1A5A00C4D9EE /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22412911C0F1A5A00C4D9EE /* HomePageModel.m */; };
+		C2278AC41C552443005C31D7 /* OrderConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2278AC31C552443005C31D7 /* OrderConfirmViewController.m */; };
 		C22873781C0D8CC400966280 /* ForgetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22873621C0D8CC400966280 /* ForgetPassWordViewController.m */; };
 		C22873791C0D8CC400966280 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22873641C0D8CC400966280 /* LoginViewController.m */; };
 		C228737A1C0D8CC400966280 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22873661C0D8CC400966280 /* RegisterViewController.m */; };
@@ -120,6 +121,8 @@
 		C22412891C0F1A3300C4D9EE /* XingQuNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XingQuNetAPIClient.m; sourceTree = "<group>"; };
 		C22412901C0F1A5A00C4D9EE /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
 		C22412911C0F1A5A00C4D9EE /* HomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModel.m; sourceTree = "<group>"; };
+		C2278AC21C552443005C31D7 /* OrderConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmViewController.h; sourceTree = "<group>"; };
+		C2278AC31C552443005C31D7 /* OrderConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmViewController.m; sourceTree = "<group>"; };
 		C22873611C0D8CC400966280 /* ForgetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPassWordViewController.h; sourceTree = "<group>"; };
 		C22873621C0D8CC400966280 /* ForgetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPassWordViewController.m; sourceTree = "<group>"; };
 		C22873631C0D8CC400966280 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -386,8 +389,6 @@
 				C27429F01C34AF6400ED7993 /* SetingViewController.m */,
 				C27429F21C34F30200ED7993 /* ModifyUserInfoViewController.h */,
 				C27429F31C34F30200ED7993 /* ModifyUserInfoViewController.m */,
-				C2742A051C350BE400ED7993 /* MyOrderMainViewController.h */,
-				C2742A061C350BE400ED7993 /* MyOrderMainViewController.m */,
 				C2FE60D41C524453003384EC /* MyCollectionViewController.h */,
 				C2FE60D51C524453003384EC /* MyCollectionViewController.m */,
 				C2C9A80E1C53B44C00D9498D /* MyOrderDetailViewController.h */,
@@ -409,6 +410,8 @@
 				C22873751C0D8CC400966280 /* HomePageViewController.m */,
 				C22873761C0D8CC400966280 /* OrderPageViewController.h */,
 				C22873771C0D8CC400966280 /* OrderPageViewController.m */,
+				C2278AC21C552443005C31D7 /* OrderConfirmViewController.h */,
+				C2278AC31C552443005C31D7 /* OrderConfirmViewController.m */,
 			);
 			path = RootControllers;
 			sourceTree = "<group>";
@@ -574,6 +577,8 @@
 		C2742A181C350D8800ED7993 /* MyOrderChildVC */ = {
 			isa = PBXGroup;
 			children = (
+				C2742A051C350BE400ED7993 /* MyOrderMainViewController.h */,
+				C2742A061C350BE400ED7993 /* MyOrderMainViewController.m */,
 				C2742A191C350DB300ED7993 /* MyFinishedOrderViewController.h */,
 				C2742A1A1C350DB300ED7993 /* MyFinishedOrderViewController.m */,
 				C2742A1C1C350DE000ED7993 /* MyOnGoingOrderViewController.h */,
@@ -977,6 +982,7 @@
 				C2D25B681C200F8D00F162C3 /* sortMenuCollectionCell.m in Sources */,
 				C2742A1E1C350DE000ED7993 /* MyOnGoingOrderViewController.m in Sources */,
 				C29FFD941C0D665400956820 /* AppDelegate.m in Sources */,
+				C2278AC41C552443005C31D7 /* OrderConfirmViewController.m in Sources */,
 				C276FC951C51179100830999 /* MJPhotoView.m in Sources */,
 				C2742A071C350BE400ED7993 /* MyOrderMainViewController.m in Sources */,
 				C22873781C0D8CC400966280 /* ForgetPassWordViewController.m in Sources */,
