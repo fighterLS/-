@@ -51,7 +51,7 @@
     
     _maskView=[[UIView alloc]initWithFrame:kScreen_Bounds];
     _maskView.backgroundColor=[UIColor blackColor];
-    _maskView.alpha=0.3;
+    _maskView.alpha=0.1;
     UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(disMissCurrentView)];
     [_maskView addGestureRecognizer:tapGesture];
     self.userInteractionEnabled=YES;
@@ -101,9 +101,9 @@
 {
     [view addSubview:_maskView];
     [view addSubview:self];
+    _maskView.alpha=0.1;
     [UIView animateWithDuration:0.3 animations:^{
         [self setTop:64];
-        _maskView.alpha=0.3;
     } completion:^(BOOL finished) {
         
     }];

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "609F207D1A44049F7F8EB94F"
+               BlueprintIdentifier = "F39CF12F65455BF09423301E"
                BuildableName = "libMasonry.a"
                BlueprintName = "Masonry"
                ReferencedContainer = "container:Pods.xcodeproj">

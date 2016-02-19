@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <TTTAttributedLabel.h>
 @interface TCellDetailText : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *textLB;
 
 @end

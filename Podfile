@@ -7,4 +7,5 @@ pod 'pop'
 pod 'MBProgressHUD'
 pod 'IQKeyboardManager'
 pod 'Masonry'
-pod 'MJRefresh'
+pod 'MJRefresh'A drop-in replacement for UILabel that supports attributes, data detectors, links, and more
+pod 'TTTAttributedLabel' #A drop-in replacement for UILabel that supports attributes, data detectors, links, and more

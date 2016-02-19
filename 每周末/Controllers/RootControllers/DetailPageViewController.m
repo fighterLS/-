@@ -33,6 +33,16 @@ const CGFloat BackGroupHeight =375;
     [super viewDidLoad];
     _bottomHoldView.hidden=YES;
     [self sendRequest];
+    
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@元/位",_homePageModel.price_info] ];
+    [attributeString addAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"b39954"],NSFontAttributeName:[UIFont systemFontOfSize:19]} range:NSMakeRange(0,[_homePageModel.price_info length]+1)];
+    if(_homePageModel.price_info.length>0)
+    {
+        _oderFeeLable.attributedText=attributeString;
+    }else
+    {
+        _oderFeeLable.text=@"免费";
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -117,6 +127,7 @@ const CGFloat BackGroupHeight =375;
             if (vCell==nil) {
                 vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellDetailText" forIndexPath:indexPath];
             }
+         
              vCell.textLB.text=activityModel.content;
             return vCell;
             
@@ -130,9 +141,7 @@ const CGFloat BackGroupHeight =375;
             [vCell.detailImage setImageWithURL:[NSURL URLWithString:activityModel.content] placeholder:[UIImage imageNamed:@"默认图"]];
              return vCell;   //活动描述
         }
-    
-       
-       
+   
     }
     else if(indexPath.section==2)
     {
@@ -209,7 +218,7 @@ const CGFloat BackGroupHeight =375;
         CGFloat cellHeight=0.0;
         if (indexPath.row==0) {
             cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:19] width:kScreenWidth-16];
-            cellHeight+=140;
+            cellHeight+=180;
         }else
         {
             cellHeight=[_detailModel.address heightForFont:[UIFont systemFontOfSize:17] width:kScreenWidth-60];
@@ -223,8 +232,9 @@ const CGFloat BackGroupHeight =375;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
+
             cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
-            cellHeight+=10;
+            cellHeight+=20;
         }else
         {
             cellHeight=200;
@@ -237,7 +247,7 @@ const CGFloat BackGroupHeight =375;
 
         if ([activityModel.type isEqualToString:@"text"]) {
             cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
-            cellHeight+=10;
+            cellHeight+=20;
         }else
         {
             cellHeight=200;
@@ -250,7 +260,7 @@ const CGFloat BackGroupHeight =375;
         
         if ([activityModel.type isEqualToString:@"text"]) {
             cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
-            cellHeight+=10;
+            cellHeight+=20;
         }else
         {
             cellHeight=200;
@@ -322,6 +332,8 @@ const CGFloat BackGroupHeight =375;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark ---action----
+
 #pragma mark --convience method--
 -(ScrollPageView *)scrollPageView
 {
@@ -392,6 +404,20 @@ const CGFloat BackGroupHeight =375;
 - (IBAction)collectionBtnAction:(UIButton *)sender {
     sender.selected=!sender.selected;
 }
+////MARK ---convinence Method---
+//-(CGFloat)heightForLableSizeWith:(NSString *)string lineSpace:(CGFloat)lineSpace font:(UIFont *)font width:(CGFloat)width
+//{
+//    //先通过NSMutableAttributedString设置和上面tttLabel一样的属性,例如行间距,字体
+//    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:string];//自定义str和TTTAttributedLabel一样的行间距
+//    NSMutableParagraphStyle *paragrapStyle = [[NSMutableParagraphStyle alloc] init];
+//    [paragrapStyle setLineSpacing:lineSpace];//设置行间距
+//    [attrString addAttribute:NSParagraphStyleAttributeName value:paragrapStyle range:NSMakeRange(0, string.length)];//设置字体
+//    [attrString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, string.length)];
+//    //得到自定义行间距的UILabel的高度
+//    //CGSizeMake(300,MAXFLOAt)中的300,代表是UILable控件的宽度,它和初始化TTTAttributedLabel的宽度是一样的.
+//    CGFloat height = [TTTAttributedLabel sizeThatFitsAttributedString:attrString withConstraints:CGSizeMake(width, MAXFLOAT) limitedToNumberOfLines:0].height;    //重新改变tttLabel的frame高度CGRect rect = tttLabel.frame;
+//    return height;
+//}
 
 /*
 #pragma mark - Navigation

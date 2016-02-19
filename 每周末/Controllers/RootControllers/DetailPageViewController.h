@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailPageViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *oderFeeLable;
 
 @property (nonatomic, strong) UIImageView *imageBG;
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;

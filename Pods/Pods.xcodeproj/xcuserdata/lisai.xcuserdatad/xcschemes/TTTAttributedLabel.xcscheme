@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3B2F16F2840F9322101A626"
-               BuildableName = "libUIImage+BlurredFrame.a"
-               BlueprintName = "UIImage+BlurredFrame"
+               BlueprintIdentifier = "8A0C3F3A878E1436D485939B"
+               BuildableName = "libTTTAttributedLabel.a"
+               BlueprintName = "TTTAttributedLabel"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

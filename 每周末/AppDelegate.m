@@ -21,7 +21,6 @@
     [self gaoDeMapKitInit];
      self.storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self setupLoginViewController];
-    
 //    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
 //    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
 //    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
@@ -64,6 +63,7 @@
     
     [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:rootVC]];
 }
+
 
 #pragma mark---SDK包管理 ---
 -(void)gaoDeMapKitInit

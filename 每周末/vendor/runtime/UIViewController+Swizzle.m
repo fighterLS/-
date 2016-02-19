@@ -32,11 +32,12 @@
 
 #pragma mark BackBtn M
 - (UIBarButtonItem *)backButton{
+    
+ 
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title = @"";
     temporaryBarButtonItem.target = self;
     UIImage *backButtonBackgroundImage = [UIImage imageNamed:@"返回"];
- 
 //    id appearance=[UIBarButtonItem appearanceWhenContainedIn:[self.navigationController class], nil];
 //    [appearance setBackButtonBackgroundImage:backButtonBackgroundImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [temporaryBarButtonItem setBackButtonBackgroundImage:[backButtonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, backButtonBackgroundImage.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
