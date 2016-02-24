@@ -15,7 +15,10 @@
 - (void)awakeFromNib {
     // Initialization code
 }
-
+-(void)setHomePage:(Result *)homePage
+{
+   
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

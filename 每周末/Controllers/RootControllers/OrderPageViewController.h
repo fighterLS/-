@@ -10,5 +10,5 @@
 
 @interface OrderPageViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *contentTableview;
-
+@property (nonatomic, strong) Result *homeModel;///<临时
 @end

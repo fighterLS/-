@@ -111,18 +111,18 @@
     
     
     NSArray *menuItems = @[
-                           [sortMenuItems itemWithTitle:@"分类1_1" iconName:@"分类1_1" index:0],
-                           [sortMenuItems itemWithTitle:@"分类1_2" iconName:@"分类1_2" index:1],
-                           [sortMenuItems itemWithTitle:@"分类1_3" iconName:@"分类1_3" index:2],
-                           [sortMenuItems itemWithTitle:@"分类1_4" iconName:@"分类1_4" index:3],
-                           [sortMenuItems itemWithTitle:@"分类1_5" iconName:@"分类1_5" index:4],
-                           [sortMenuItems itemWithTitle:@"分类1_6" iconName:@"分类1_6" index:5],
-                           [sortMenuItems itemWithTitle:@"分类1_7" iconName:@"分类1_7" index:7],
-                           [sortMenuItems itemWithTitle:@"分类1_2" iconName:@"分类1_2" index:8],
-                           [sortMenuItems itemWithTitle:@"分类1_3" iconName:@"分类1_3" index:9],
-                           [sortMenuItems itemWithTitle:@"分类1_4" iconName:@"分类1_4" index:10],
-                           [sortMenuItems itemWithTitle:@"分类1_5" iconName:@"分类1_5" index:11],
-                           [sortMenuItems itemWithTitle:@"分类1_6" iconName:@"分类1_6" index:12],
+                           [sortMenuItems itemWithTitle:@"全部" iconName:@"分类1_1全部" selectIconName:@"选中_1全部" index:0],
+                           [sortMenuItems itemWithTitle:@"音乐" iconName:@"分类1_2音乐" selectIconName:@"选中_2音乐" index:1],
+                            [sortMenuItems itemWithTitle:@"戏剧" iconName:@"分类1_3戏剧" selectIconName:@"选中_3戏剧" index:2],
+                           [sortMenuItems itemWithTitle:@"展览" iconName:@"分类1_4展览" selectIconName:@"选中_4展览" index:4],
+                           [sortMenuItems itemWithTitle:@"运动" iconName:@"分类1_5运动" selectIconName:@"选中_5运动" index:5],
+                           [sortMenuItems itemWithTitle:@"美食" iconName:@"分类1_6美食" selectIconName:@"选中_6美食" index:6],
+                           [sortMenuItems itemWithTitle:@"绘画" iconName:@"分类1_7绘画" selectIconName:@"选中_7绘画" index:7],
+                           [sortMenuItems itemWithTitle:@"烘培" iconName:@"分类1_8烘培" selectIconName:@"选中_8烘培" index:8],
+                           [sortMenuItems itemWithTitle:@"戏剧" iconName:@"分类1_9手工" selectIconName:@"选中_9手工" index:9],
+                           [sortMenuItems itemWithTitle:@"娱乐" iconName:@"分类1_10娱乐" selectIconName:@"选中_10娱乐" index:10],
+                           [sortMenuItems itemWithTitle:@"讲座" iconName:@"分类1_11讲座" selectIconName:@"选中_11讲座" index:11],
+                           [sortMenuItems itemWithTitle:@"周边游" iconName:@"分类1_12周边游" selectIconName:@"选中_12周边游" index:12],
                            ];
     if (!_myPopMenu) {
         _myPopMenu = [[sortMenuView alloc] initWithFrame:kScreen_Bounds items:menuItems];

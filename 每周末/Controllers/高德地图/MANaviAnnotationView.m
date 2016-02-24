@@ -20,10 +20,10 @@
     if (self)
     {
         
-        //imageView
-        _carImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"详情地址"]];
-        [self addSubview:_carImageView];
-        
+//        //imageView
+//        _carImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"详情地址"]];
+//        [self addSubview:_carImageView];
+//        
         //label
         _naviLabel = [[UILabel alloc] init];
         _naviLabel.text = @"导航";
@@ -42,9 +42,9 @@
 {
     [super layoutSubviews];
     
-    _carImageView.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) - CGRectGetHeight(_carImageView.frame) * (0.5 + kMarginRatio));
-    
-    _naviLabel.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) + CGRectGetHeight(_naviLabel.frame) * (0.5 + kMarginRatio));
+//    _carImageView.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) - CGRectGetHeight(_carImageView.frame) * (0.5 + kMarginRatio));
+//    
+//    _naviLabel.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) + CGRectGetHeight(_naviLabel.frame) * (0.5 + kMarginRatio));
 }
 
 @end
@@ -57,8 +57,8 @@
     if (self)
     {
         NaviButton *naviButton = [[NaviButton alloc] initWithFrame:(CGRectMake(0, 0, naviButtonWidth, naviButtonHeight))];
-        
-        self.leftCalloutAccessoryView = naviButton;
+
+       self.leftCalloutAccessoryView = naviButton;
     }
     return self;
 }

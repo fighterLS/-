@@ -22,7 +22,14 @@
 @interface sortMenuItems: NSObject
 @property (nonatomic, copy) NSString *iconName;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *selectIconName;
 @property (nonatomic, assign) NSInteger index;
-- (instancetype)initWithTitle:(NSString *)title iconName:(NSString *)iconName index:(NSInteger)index;
-+ (instancetype)itemWithTitle:(NSString *)title iconName:(NSString *)iconName index:(NSInteger)index;
+- (instancetype)itemWithTitle:(NSString *)title
+                     iconName:(NSString *)iconName
+               selectIconName:(NSString *)selectIconName
+                        index:(NSInteger)index;
++ (instancetype)itemWithTitle:(NSString *)title
+                     iconName:(NSString *)iconName
+               selectIconName:(NSString *)selectIconName
+                        index:(NSInteger)index;
 @end

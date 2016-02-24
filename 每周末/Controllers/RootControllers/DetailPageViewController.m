@@ -16,12 +16,11 @@
 #import "OpenAMapURLRequestViewController.h"
 #import "PopMenu.h"
 #import "MJPhotoBrowser.h"
-const CGFloat BackGroupHeight =375;
+const CGFloat BackGroupHeight =280;
 @interface DetailPageViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,ScrollPageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *bottomHoldView;
 
-@property (weak, nonatomic) IBOutlet UILabel *orderFee;
 @property (nonatomic, strong) DetailResult *detailModel;
 @property (nonatomic, strong) ScrollPageView *scrollPageView;
 @property (nonatomic, strong) PopMenu *myPopMenu;//shareView
@@ -32,6 +31,8 @@ const CGFloat BackGroupHeight =375;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _bottomHoldView.hidden=YES;
+    _orderFeeButton.layer.masksToBounds=YES;
+    _orderFeeButton.layer.cornerRadius=2;
     [self sendRequest];
     
     NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@元/位",_homePageModel.price_info] ];
@@ -377,6 +378,7 @@ const CGFloat BackGroupHeight =375;
 
 - (IBAction)oderDetailButtonAction:(UIButton *)sender {
     OrderPageViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"OrderPageViewController"];
+    vc.homeModel=_homePageModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -404,20 +406,7 @@ const CGFloat BackGroupHeight =375;
 - (IBAction)collectionBtnAction:(UIButton *)sender {
     sender.selected=!sender.selected;
 }
-////MARK ---convinence Method---
-//-(CGFloat)heightForLableSizeWith:(NSString *)string lineSpace:(CGFloat)lineSpace font:(UIFont *)font width:(CGFloat)width
-//{
-//    //先通过NSMutableAttributedString设置和上面tttLabel一样的属性,例如行间距,字体
-//    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:string];//自定义str和TTTAttributedLabel一样的行间距
-//    NSMutableParagraphStyle *paragrapStyle = [[NSMutableParagraphStyle alloc] init];
-//    [paragrapStyle setLineSpacing:lineSpace];//设置行间距
-//    [attrString addAttribute:NSParagraphStyleAttributeName value:paragrapStyle range:NSMakeRange(0, string.length)];//设置字体
-//    [attrString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, string.length)];
-//    //得到自定义行间距的UILabel的高度
-//    //CGSizeMake(300,MAXFLOAt)中的300,代表是UILable控件的宽度,它和初始化TTTAttributedLabel的宽度是一样的.
-//    CGFloat height = [TTTAttributedLabel sizeThatFitsAttributedString:attrString withConstraints:CGSizeMake(width, MAXFLOAT) limitedToNumberOfLines:0].height;    //重新改变tttLabel的frame高度CGRect rect = tttLabel.frame;
-//    return height;
-//}
+
 
 /*
 #pragma mark - Navigation

@@ -31,7 +31,6 @@
     
     [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [self.requestSerializer setValue:url.absoluteString forHTTPHeaderField:@"Referer"];
-    
     self.securityPolicy.allowInvalidCertificates = YES;
     
     return self;

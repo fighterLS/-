@@ -12,7 +12,8 @@
 #import "TCellOrderSelectButton.h"
 
 @interface OrderPageViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@property (weak, nonatomic) IBOutlet UILabel *totalFeeLabel;
+@property (nonatomic, assign) NSInteger selectFeeType;
 @end
 
 @implementation OrderPageViewController
@@ -66,24 +67,44 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-            TCellOderDetail *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellOderDetail" forIndexPath:indexPath];
-            return vCell;
+        
+      TCellOderDetail *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellOderDetail" forIndexPath:indexPath];
+        vCell.homePage=_homeModel;
+      return vCell;
 
     }
     else if (indexPath.section==1)
     {
         TCellOrderSelectButton *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellOrderSelectButton" forIndexPath:indexPath];
-    
+        if (indexPath.row==0) {
+            vCell.titleLB.text=@"大副画";
+            vCell.orderFeeLable.text=[NSString stringWithFormat:@"%@",@(_homeModel.price+20)];
+        }else if(indexPath.row==1)
+        {
+            vCell.titleLB.text=@"中副画";
+             vCell.orderFeeLable.text=[NSString stringWithFormat:@"%@",@(_homeModel.price+10)];
+        }else
+        {
+            vCell.titleLB.text=@"小副画";
+             vCell.orderFeeLable.text=[NSString stringWithFormat:@"%@",@(_homeModel.price)];
+        }
         return vCell;
     }
     else
     {
         TCellOrderSteper *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellOrderSteper" forIndexPath:indexPath];
         if (indexPath.row==0) {
+            vCell.titleLable.text=@"数量";
             vCell.telephoneNubLB.hidden=YES;
             vCell.stepper.hidden=NO;
+             __weak typeof(self) weakSelf=self;
+            vCell.stepper.valueChangedCallback = ^(PKYStepper *stepper, float count) {
+                stepper.countLabel.text = [NSString stringWithFormat:@"%@", @(count)];
+                weakSelf.totalFeeLabel.text=[NSString stringWithFormat:@"%@元",@(count*_selectFeeType)];
+            };
         }else
         {
+            vCell.titleLable.text=@"手机号";
             vCell.telephoneNubLB.hidden=NO;
             vCell.stepper.hidden=YES;
         }
@@ -124,6 +145,7 @@
     {
         TCellOrderSelectButton *vCell=[tableView cellForRowAtIndexPath:indexPath];
         [_contentTableview selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        _selectFeeType=[vCell.orderFeeLable.text integerValue];
         vCell.selectButton.selected=vCell.selected;
     }
 }
@@ -141,7 +163,7 @@
 {
     UIView *headView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
     headView.backgroundColor = [UIColor clearColor];
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, height-25, 180, 15)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, height-25, 180, 15)];
     titleLabel.text=title;
     [titleLabel setFont:[UIFont systemFontOfSize:14]];
     titleLabel.textColor=[UIColor colorWithHexString:@"333333"];

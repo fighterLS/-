@@ -12,18 +12,23 @@
 
 - (instancetype)initWithTitle:(NSString *)title
                      iconName:(NSString *)iconName
-                        index:(NSInteger)index {
+               selectIconName:(NSString *)selectIconName
+                        index:(NSInteger)index
+
+{
     if (self = [super init]) {
         self.title = title;
         self.iconName = iconName;
         self.index = index;
+        self.selectIconName=selectIconName;
     }
     return self;
 }
 + (instancetype)itemWithTitle:(NSString *)title
                      iconName:(NSString *)iconName
+               selectIconName:(NSString *)selectIconName
                         index:(NSInteger)index {
-    sortMenuItems *item = [[self alloc ] initWithTitle:title iconName:iconName index:index];
+    sortMenuItems *item = [[self alloc ] initWithTitle:title iconName:iconName selectIconName:selectIconName index:index];
     return item;
 }
 @end
@@ -88,14 +93,22 @@
 {
     sortMenuCollectionCell *vCell=[collectionView dequeueReusableCellWithReuseIdentifier:@"sortMenuCollectionCell" forIndexPath:indexPath];
     sortMenuItems *items=[_menuItemsArray objectAtIndex:indexPath.row];
-    [vCell.iconImage setImage:[UIImage imageNamed:items.iconName]];
-    vCell.titleLable.text=items.title;
+    vCell.menuItems=items;
     return vCell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    sortMenuCollectionCell *vCell=(sortMenuCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+    vCell.IconButton.selected=vCell.selected;
+    [self disMissCurrentView];
+}
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    sortMenuCollectionCell *vCell=(sortMenuCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    vCell.IconButton.selected=vCell.selected;
 }
 -(void)presentViewFromVisibleView:(UIView *)view
 {

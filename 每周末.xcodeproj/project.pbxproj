@@ -63,6 +63,12 @@
 		C277143F1C16A77500F188F5 /* TCellDetailText.m in Sources */ = {isa = PBXBuildFile; fileRef = C277143E1C16A77500F188F5 /* TCellDetailText.m */; };
 		C27714421C16A78700F188F5 /* TCellDetailImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714411C16A78700F188F5 /* TCellDetailImage.m */; };
 		C27714481C16ABAF00F188F5 /* TCellDetailImageText.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714471C16ABAF00F188F5 /* TCellDetailImageText.m */; };
+		C295945F1C7D498000D2EE5A /* MMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C29594531C7D498000D2EE5A /* MMAlertView.m */; };
+		C29594601C7D498000D2EE5A /* MMPopupCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C29594551C7D498000D2EE5A /* MMPopupCategory.m */; };
+		C29594611C7D498000D2EE5A /* MMPopupitem.m in Sources */ = {isa = PBXBuildFile; fileRef = C29594581C7D498000D2EE5A /* MMPopupitem.m */; };
+		C29594621C7D498000D2EE5A /* MMPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C295945A1C7D498000D2EE5A /* MMPopupView.m */; };
+		C29594631C7D498000D2EE5A /* MMPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C295945C1C7D498000D2EE5A /* MMPopupWindow.m */; };
+		C29594641C7D498000D2EE5A /* MMSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C295945E1C7D498000D2EE5A /* MMSheetView.m */; };
 		C29FFD911C0D665400956820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C29FFD901C0D665400956820 /* main.m */; };
 		C29FFD941C0D665400956820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29FFD931C0D665400956820 /* AppDelegate.m */; };
 		C29FFD9C1C0D665400956820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29FFD9B1C0D665400956820 /* Assets.xcassets */; };
@@ -224,6 +230,19 @@
 		C27714411C16A78700F188F5 /* TCellDetailImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCellDetailImage.m; sourceTree = "<group>"; };
 		C27714461C16ABAF00F188F5 /* TCellDetailImageText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellDetailImageText.h; sourceTree = "<group>"; };
 		C27714471C16ABAF00F188F5 /* TCellDetailImageText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCellDetailImageText.m; sourceTree = "<group>"; };
+		C29594521C7D498000D2EE5A /* MMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAlertView.h; sourceTree = "<group>"; };
+		C29594531C7D498000D2EE5A /* MMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAlertView.m; sourceTree = "<group>"; };
+		C29594541C7D498000D2EE5A /* MMPopupCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupCategory.h; sourceTree = "<group>"; };
+		C29594551C7D498000D2EE5A /* MMPopupCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupCategory.m; sourceTree = "<group>"; };
+		C29594561C7D498000D2EE5A /* MMPopupDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupDefine.h; sourceTree = "<group>"; };
+		C29594571C7D498000D2EE5A /* MMPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupItem.h; sourceTree = "<group>"; };
+		C29594581C7D498000D2EE5A /* MMPopupitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupitem.m; sourceTree = "<group>"; };
+		C29594591C7D498000D2EE5A /* MMPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupView.h; sourceTree = "<group>"; };
+		C295945A1C7D498000D2EE5A /* MMPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupView.m; sourceTree = "<group>"; };
+		C295945B1C7D498000D2EE5A /* MMPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupWindow.h; sourceTree = "<group>"; };
+		C295945C1C7D498000D2EE5A /* MMPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupWindow.m; sourceTree = "<group>"; };
+		C295945D1C7D498000D2EE5A /* MMSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSheetView.h; sourceTree = "<group>"; };
+		C295945E1C7D498000D2EE5A /* MMSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSheetView.m; sourceTree = "<group>"; };
 		C29FFD8C1C0D665400956820 /* 每周末.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "每周末.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29FFD901C0D665400956820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C29FFD921C0D665400956820 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -453,6 +472,7 @@
 		C22873911C0D8D7E00966280 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C29594511C7D497F00D2EE5A /* MMPopupView */,
 				C276FC7A1C51179100830999 /* MJPhotoBrowser */,
 				C2B81AA71C43EC7C00146342 /* PhotoBrowser */,
 				C2742A081C350C6000ED7993 /* XLPagerTabStrip */,
@@ -610,6 +630,26 @@
 				C276FC8D1C51179100830999 /* UIImageView+MJWebCache.m */,
 			);
 			path = MJPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		C29594511C7D497F00D2EE5A /* MMPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				C29594521C7D498000D2EE5A /* MMAlertView.h */,
+				C29594531C7D498000D2EE5A /* MMAlertView.m */,
+				C29594541C7D498000D2EE5A /* MMPopupCategory.h */,
+				C29594551C7D498000D2EE5A /* MMPopupCategory.m */,
+				C29594561C7D498000D2EE5A /* MMPopupDefine.h */,
+				C29594571C7D498000D2EE5A /* MMPopupItem.h */,
+				C29594581C7D498000D2EE5A /* MMPopupitem.m */,
+				C29594591C7D498000D2EE5A /* MMPopupView.h */,
+				C295945A1C7D498000D2EE5A /* MMPopupView.m */,
+				C295945B1C7D498000D2EE5A /* MMPopupWindow.h */,
+				C295945C1C7D498000D2EE5A /* MMPopupWindow.m */,
+				C295945D1C7D498000D2EE5A /* MMSheetView.h */,
+				C295945E1C7D498000D2EE5A /* MMSheetView.m */,
+			);
+			path = MMPopupView;
 			sourceTree = "<group>";
 		};
 		C29FFD831C0D665400956820 = {
@@ -946,6 +986,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C295945F1C7D498000D2EE5A /* MMAlertView.m in Sources */,
+				C29594611C7D498000D2EE5A /* MMPopupitem.m in Sources */,
 				C2742A141C350C6000ED7993 /* XLButtonBarViewCell.m in Sources */,
 				C276FC931C51179100830999 /* MJPhotoProgressView.m in Sources */,
 				C228737B1C0D8CC400966280 /* MyInformationViewController.m in Sources */,
@@ -970,6 +1012,7 @@
 				C228737A1C0D8CC400966280 /* RegisterViewController.m in Sources */,
 				C27714421C16A78700F188F5 /* TCellDetailImage.m in Sources */,
 				C2F6A5711C33D3D1004FD392 /* BaseMapViewController.m in Sources */,
+				C29594641C7D498000D2EE5A /* MMSheetView.m in Sources */,
 				C2C9A8101C53B44C00D9498D /* MyOrderDetailViewController.m in Sources */,
 				C228742B1C0D943E00966280 /* UIView+Loading.m in Sources */,
 				C22873811C0D8CC400966280 /* OrderPageViewController.m in Sources */,
@@ -995,6 +1038,7 @@
 				C228740A1C0D8D7E00966280 /* GlowImageView.m in Sources */,
 				C276FC911C51179100830999 /* MJPhotoBrowser.m in Sources */,
 				C25A8D9B1C33A99E000F9540 /* ScrollPageView.m in Sources */,
+				C29594621C7D498000D2EE5A /* MMPopupView.m in Sources */,
 				C2742A171C350C6000ED7993 /* XLPagerTabStripViewController.m in Sources */,
 				C22873901C0D8D6200966280 /* TCellHomePage.m in Sources */,
 				C22873F91C0D8D7E00966280 /* CircleTransitionAnimator.m in Sources */,
@@ -1005,10 +1049,12 @@
 				C29FFD911C0D665400956820 /* main.m in Sources */,
 				C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */,
 				C27429F41C34F30200ED7993 /* ModifyUserInfoViewController.m in Sources */,
+				C29594631C7D498000D2EE5A /* MMPopupWindow.m in Sources */,
 				C22873F51C0D8D7E00966280 /* EAIntroView.m in Sources */,
 				C276FC8F1C51179100830999 /* MJPhoto.m in Sources */,
 				C2A227571C2F94AC00DE9CD1 /* TCellOderDetail.m in Sources */,
 				C27429F11C34AF6400ED7993 /* SetingViewController.m in Sources */,
+				C29594601C7D498000D2EE5A /* MMPopupCategory.m in Sources */,
 				C2F6A5721C33D3D1004FD392 /* OpenAMapURLRequestViewController.m in Sources */,
 				C2742A251C350ED700ED7993 /* MyOrderTableViewCell.m in Sources */,
 				C2FD07E01C0D985A00FB7CED /* MBProgressHUD+Add.m in Sources */,
@@ -1152,8 +1198,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1164,7 +1210,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1174,8 +1220,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1186,7 +1232,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25d9ba2-656a-4ce5-8930-a3a4faba4eb1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

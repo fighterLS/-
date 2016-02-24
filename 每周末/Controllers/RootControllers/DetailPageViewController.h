@@ -10,6 +10,7 @@
 
 @interface DetailPageViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *oderFeeLable;
+@property (weak, nonatomic) IBOutlet UIButton *orderFeeButton;
 
 @property (nonatomic, strong) UIImageView *imageBG;
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;

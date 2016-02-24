@@ -27,50 +27,37 @@
                             <constraint firstAttribute="width" constant="1" id="z4P-kp-nYY"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxI-k1-24h">
-                        <rect key="frame" x="0.0" y="0.0" width="109" height="48"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLZ-Hm-Qrf">
-                                <rect key="frame" x="35" y="13" width="67" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="分类1_1" translatesAutoresizingMaskIntoConstraints="NO" id="gLF-cQ-Xvn">
-                                <rect key="frame" x="6" y="13" width="21" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="109" id="4lQ-J9-uwQ"/>
-                            <constraint firstAttribute="height" constant="48" id="yPi-pa-2ny"/>
-                        </constraints>
-                    </view>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX1-oZ-H0d">
+                        <rect key="frame" x="8" y="4" width="92" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="  全部" image="分类1_1全部">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="COn-gM-bJc" secondAttribute="bottom" id="8gm-zm-vZM"/>
-                <constraint firstItem="oxI-k1-24h" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fzq-RT-QyB"/>
+                <constraint firstItem="COn-gM-bJc" firstAttribute="leading" secondItem="NX1-oZ-H0d" secondAttribute="trailing" constant="8" id="ABs-xm-VPK"/>
+                <constraint firstItem="NX1-oZ-H0d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="H2z-Ys-jtX"/>
                 <constraint firstItem="HjV-PK-3ed" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QgE-pJ-eaD"/>
+                <constraint firstItem="HjV-PK-3ed" firstAttribute="top" secondItem="NX1-oZ-H0d" secondAttribute="bottom" constant="3" id="Rsb-nx-T8D"/>
                 <constraint firstAttribute="trailing" secondItem="COn-gM-bJc" secondAttribute="trailing" id="UL4-SR-2I5"/>
                 <constraint firstItem="COn-gM-bJc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iEq-5f-Z2N"/>
                 <constraint firstAttribute="bottom" secondItem="HjV-PK-3ed" secondAttribute="bottom" id="s5r-lo-zhx"/>
+                <constraint firstItem="NX1-oZ-H0d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="tqc-Xo-hNa"/>
                 <constraint firstAttribute="trailing" secondItem="HjV-PK-3ed" secondAttribute="trailing" id="uRc-VI-z06"/>
-                <constraint firstItem="oxI-k1-24h" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zmh-QP-JFe"/>
             </constraints>
             <size key="customSize" width="109" height="48"/>
             <connections>
-                <outlet property="iconImage" destination="gLF-cQ-Xvn" id="MsI-EO-cSh"/>
-                <outlet property="titleLable" destination="pLZ-Hm-Qrf" id="loT-d3-jKt"/>
+                <outlet property="IconButton" destination="NX1-oZ-H0d" id="UkP-oY-Spx"/>
             </connections>
             <point key="canvasLocation" x="209.5" y="185"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="分类1_1" width="21" height="21"/>
+        <image name="分类1_1全部" width="21" height="21"/>
     </resources>
 </document>

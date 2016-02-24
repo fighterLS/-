@@ -89,12 +89,12 @@
         [noteView setImage:[UIImage imageNamed:@"首页推荐-banner_bg640"]];
         
 
-        pageControl=[[SMPageControl alloc]initWithFrame:CGRectMake(0,18, kScreenWidth-3, 19)];
+        pageControl=[[SMPageControl alloc]initWithFrame:CGRectMake(0,0, kScreenWidth, 20)];
         pageControl.currentPage=0;
         pageControl.numberOfPages=pages-2;
-        pageControl.alignment=SMPageControlAlignmentRight;
-        pageControl.indicatorMargin = 3.0f;
-        pageControl.indicatorDiameter = 3.0f;
+//        pageControl.alignment=SMPageControlAlignmentRight;
+//        pageControl.indicatorMargin = 3.0f;
+//        pageControl.indicatorDiameter = 3.0f;
         [noteView addSubview:pageControl];
         
         _infoLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, kScreenWidth, 20)];

@@ -11,5 +11,6 @@
 @interface TCellOrderSteper : UITableViewCell
 @property (weak, nonatomic) IBOutlet PKYStepper *stepper;
 @property (weak, nonatomic) IBOutlet UITextField *telephoneNubLB;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @end

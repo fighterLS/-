@@ -11,12 +11,9 @@
 @implementation TCellOrderSteper
 
 - (void)awakeFromNib {
-    self.stepper.value = 1.0f;
+    self.stepper.value = 0.0f;
     self.stepper.stepInterval = 1.0f;
-   // __weak typeof(self) weakSelf=self;
-    self.stepper.valueChangedCallback = ^(PKYStepper *stepper, float count) {
-        stepper.countLabel.text = [NSString stringWithFormat:@"%@", @(count)];
-    };
+    self.stepper.countLabel.text = [NSString stringWithFormat:@"0"];
     [self.stepper setup];
     // Initialization code
 }

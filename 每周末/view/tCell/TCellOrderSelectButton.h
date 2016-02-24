@@ -11,5 +11,6 @@
 @interface TCellOrderSelectButton : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLB;
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *orderFeeLable;
+@property (strong, nonatomic) Result *homePage;
 @end

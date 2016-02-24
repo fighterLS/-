@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import <Bugtags/Bugtags.h>
 #import "HomePageViewController.h"
 @interface AppDelegate ()
 
@@ -19,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self gaoDeMapKitInit];
+    [self bugTagsInit];
+    [self initMMPopupView];
      self.storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self setupLoginViewController];
 //    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
@@ -63,9 +66,31 @@
     
     [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:rootVC]];
 }
-
+/**
+ MMPopupView 为自定义的alertView  和 ActionSheetView
+ */
+-(void)initMMPopupView
+{
+    [MMPopupWindow sharedWindow].touchWildToHide = YES;
+    
+//    MMAlertViewConfig *alertConfig = [MMAlertViewConfig globalConfig];
+//    MMSheetViewConfig *sheetConfig = [MMSheetViewConfig globalConfig];
+//    
+//    alertConfig.defaultTextOK = @"OK";
+//    alertConfig.defaultTextCancel = @"Cancel";
+//    alertConfig.defaultTextConfirm = @"Confirm";
+//    
+//    sheetConfig.defaultTextCancel = @"Cancel";
+}
 
 #pragma mark---SDK包管理 ---
+-(void)bugTagsInit
+{
+    ///MARK --正式上线请去掉--
+    BugtagsOptions *options = [[BugtagsOptions alloc] init];
+    options.trackingCrashes = YES; // 具体可设置的属性请查看 Bugtags.h
+    [Bugtags startWithAppKey:@"eb1cb276785bcb8a22f8c126e5d19f26" invocationEvent:BTGInvocationEventShake options:options];
+}
 -(void)gaoDeMapKitInit
 {
     //地图

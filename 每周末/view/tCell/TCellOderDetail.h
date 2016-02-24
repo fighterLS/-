@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TCellOderDetail : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *OrderFeeLable;
+
+@property (strong, nonatomic) Result *homePage;
 
 @end

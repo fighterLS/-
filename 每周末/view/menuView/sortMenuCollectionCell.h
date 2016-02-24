@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "sortMenuView.h"
 @interface sortMenuCollectionCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
-
+@property (weak, nonatomic) IBOutlet UIButton *IconButton;
+@property (nonatomic, strong) sortMenuItems *menuItems;
 @end

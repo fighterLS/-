@@ -21,6 +21,7 @@
 #import "LoginViewController.h"
 #import "XLButtonBarPagerTabStripViewController.h"
 #import <MJRefresh.h>
+#import "MMPopupDefine.h"
 #endif
 
 #define kBaseUrlStr_Phone @"http://api.lanrenzhoumo.com/"
