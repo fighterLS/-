@@ -83,6 +83,9 @@
 		C2B81AA41C43EA9800146342 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA21C43EA9800146342 /* Default-568@2x.png */; };
 		C2B81AA51C43EA9800146342 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B81AA31C43EA9800146342 /* Default-568.png */; };
 		C2B81AAA1C43EC7C00146342 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */; };
+		C2C0CD141C7DDD2D00979171 /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0CD131C7DDD2D00979171 /* AboutAppViewController.m */; };
+		C2C0CD1A1C7DEB4100979171 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0CD171C7DEB4100979171 /* JKDBHelper.m */; };
+		C2C0CD1B1C7DEB4100979171 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0CD191C7DEB4100979171 /* JKDBModel.m */; };
 		C2C9A8101C53B44C00D9498D /* MyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9A80F1C53B44C00D9498D /* MyOrderDetailViewController.m */; };
 		C2C9A8131C53C0DC00D9498D /* TCellMyCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9A8121C53C0DC00D9498D /* TCellMyCollection.m */; };
 		C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D25B4F1C1FEDF600F162C3 /* PKYStepper.m */; };
@@ -271,6 +274,12 @@
 		C2B81AA31C43EA9800146342 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
 		C2B81AA81C43EC7C00146342 /* YYPhotoGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoGroupView.h; sourceTree = "<group>"; };
 		C2B81AA91C43EC7C00146342 /* YYPhotoGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoGroupView.m; sourceTree = "<group>"; };
+		C2C0CD121C7DDD2D00979171 /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAppViewController.h; sourceTree = "<group>"; };
+		C2C0CD131C7DDD2D00979171 /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAppViewController.m; sourceTree = "<group>"; };
+		C2C0CD161C7DEB4100979171 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
+		C2C0CD171C7DEB4100979171 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
+		C2C0CD181C7DEB4100979171 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
+		C2C0CD191C7DEB4100979171 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
 		C2C9A80E1C53B44C00D9498D /* MyOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailViewController.h; sourceTree = "<group>"; };
 		C2C9A80F1C53B44C00D9498D /* MyOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailViewController.m; sourceTree = "<group>"; };
 		C2C9A8111C53C0DC00D9498D /* TCellMyCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCellMyCollection.h; sourceTree = "<group>"; };
@@ -392,6 +401,8 @@
 				C22873641C0D8CC400966280 /* LoginViewController.m */,
 				C22873651C0D8CC400966280 /* RegisterViewController.h */,
 				C22873661C0D8CC400966280 /* RegisterViewController.m */,
+				C2C0CD121C7DDD2D00979171 /* AboutAppViewController.h */,
+				C2C0CD131C7DDD2D00979171 /* AboutAppViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -472,6 +483,7 @@
 		C22873911C0D8D7E00966280 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0CD151C7DEB4100979171 /* JKDBModel */,
 				C29594511C7D497F00D2EE5A /* MMPopupView */,
 				C276FC7A1C51179100830999 /* MJPhotoBrowser */,
 				C2B81AA71C43EC7C00146342 /* PhotoBrowser */,
@@ -769,6 +781,17 @@
 			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
+		C2C0CD151C7DEB4100979171 /* JKDBModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0CD161C7DEB4100979171 /* JKDBHelper.h */,
+				C2C0CD171C7DEB4100979171 /* JKDBHelper.m */,
+				C2C0CD181C7DEB4100979171 /* JKDBModel.h */,
+				C2C0CD191C7DEB4100979171 /* JKDBModel.m */,
+			);
+			path = JKDBModel;
+			sourceTree = "<group>";
+		};
 		C2D25B4D1C1FEDF600F162C3 /* PKYStepper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,6 +1023,7 @@
 				C22873F71C0D8D7E00966280 /* JDStatusBarStyle.m in Sources */,
 				C22873F81C0D8D7E00966280 /* JDStatusBarView.m in Sources */,
 				C2A2275A1C2F94D800DE9CD1 /* TCellOrderSteper.m in Sources */,
+				C2C0CD1A1C7DEB4100979171 /* JKDBHelper.m in Sources */,
 				C228740E1C0D8D7E00966280 /* SMPageControl.m in Sources */,
 				C228741F1C0D8D7E00966280 /* XHRealTimeBlur.m in Sources */,
 				C2A2275D1C2F951500DE9CD1 /* TCellOrderSelectButton.m in Sources */,
@@ -1020,6 +1044,7 @@
 				C22873FA1C0D8D7E00966280 /* NavigationControllerDelegate.m in Sources */,
 				C22874271C0D8DD000966280 /* FunctionIntroManager.m in Sources */,
 				C228737F1C0D8CC400966280 /* DetailPageViewController.m in Sources */,
+				C2C0CD141C7DDD2D00979171 /* AboutAppViewController.m in Sources */,
 				C2C9A8131C53C0DC00D9498D /* TCellMyCollection.m in Sources */,
 				C2F6A5751C33D3F7004FD392 /* MANaviAnnotationView.m in Sources */,
 				C2D25B681C200F8D00F162C3 /* sortMenuCollectionCell.m in Sources */,
@@ -1050,6 +1075,7 @@
 				C2D25B501C1FEDF600F162C3 /* PKYStepper.m in Sources */,
 				C27429F41C34F30200ED7993 /* ModifyUserInfoViewController.m in Sources */,
 				C29594631C7D498000D2EE5A /* MMPopupWindow.m in Sources */,
+				C2C0CD1B1C7DEB4100979171 /* JKDBModel.m in Sources */,
 				C22873F51C0D8D7E00966280 /* EAIntroView.m in Sources */,
 				C276FC8F1C51179100830999 /* MJPhoto.m in Sources */,
 				C2A227571C2F94AC00DE9CD1 /* TCellOderDetail.m in Sources */,
@@ -1198,8 +1224,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1210,7 +1236,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17181f02-655c-48be-9735-462f92f44afc";
 			};
 			name = Debug;
 		};
@@ -1220,8 +1246,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Tiny Ants Interactive Network Technology Co., Ltd. (55PDB742LN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1232,7 +1258,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meizhoumo.iPhoneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17181f02-655c-48be-9735-462f92f44afc";
 			};
 			name = Release;
 		};

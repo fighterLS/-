@@ -10,7 +10,7 @@
 #import "TCellOderDetail.h"
 #import "TCellOrderSteper.h"
 #import "TCellOrderSelectButton.h"
-
+#import "OrderConfirmViewController.h"
 @interface OrderPageViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *totalFeeLabel;
 @property (nonatomic, assign) NSInteger selectFeeType;
@@ -169,6 +169,13 @@
     titleLabel.textColor=[UIColor colorWithHexString:@"333333"];
     [headView addSubview:titleLabel];
     return headView;
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    if ([segue.identifier isEqualToString:@"OrderConfirmViewController"]) {
+//        OrderConfirmViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"OrderConfirmViewController"];
+//        vc.homePageModel=_homeModel;
+//    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

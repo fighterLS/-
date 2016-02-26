@@ -152,7 +152,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TCellHomePage *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellHomePage" forIndexPath:indexPath];
+    TCellHomePage *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellHomePage"];
+    if (vCell==nil) {
+        vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellHomePage" forIndexPath:indexPath];
+    }
     vCell.homePage=[_contentListArray objectAtIndex:indexPath.row];
     return vCell;
 }

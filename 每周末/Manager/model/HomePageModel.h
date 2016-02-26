@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XingQuNetAPIClient.h"
+#import "JKDBModel.h"
 @class Result;
 @class DetailResult,ActivityLocation,ActivitySort,ActivityTime,ActivityDescription;
 @interface HomePageModel : NSObject
@@ -16,7 +17,7 @@
 +(void)getDetailModelBlock:(void (^)(DetailResult *detailResult, NSError *error))block withLeo_id:(NSString *)leo_id session_id:(NSString *)session_id v:(NSString *)v;
 @end
 
-@interface Result : NSObject
+@interface Result : JKDBModel
 
 @property (nonatomic, assign) NSInteger price;
 

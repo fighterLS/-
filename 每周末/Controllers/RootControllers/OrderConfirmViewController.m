@@ -8,7 +8,8 @@
 
 #import "OrderConfirmViewController.h"
 
-@interface OrderConfirmViewController ()<UIActionSheetDelegate>
+@interface OrderConfirmViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *orderTitleLabel;
 
 @end
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -51,18 +52,21 @@
 //        UIActionSheet *actionSheet=[[UIActionSheet alloc]initWithTitle:@"支付方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"支付宝",@"微信", nil];
 //        [actionSheet showInView:self.view];
 //    }
-    NSArray *itemTitleArray=[NSArray arrayWithObjects:@"支付宝",@"微信", nil];
-    __weak typeof(self) weakSelf=self;
-    MMPopupItemHandler block = ^(NSInteger index){
-        weakSelf.payInfo.text=[itemTitleArray objectAtIndex:index];
-       // NSLog(@"clickd %@ button",@(index));
-    };
-    NSArray *items =
-    @[MMItemMake([itemTitleArray objectAtIndex:0], MMItemTypeNormal, block),
-      MMItemMake([itemTitleArray objectAtIndex:1], MMItemTypeNormal, block)];
-    MMSheetView *sheetView=[[MMSheetView alloc]initWithTitle:@"支付方式" items:items];
-    [sheetView show];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row==4) {
+        NSArray *itemTitleArray=[NSArray arrayWithObjects:@"支付宝",@"微信", nil];
+        __weak typeof(self) weakSelf=self;
+        MMPopupItemHandler block = ^(NSInteger index){
+            weakSelf.payInfo.text=[itemTitleArray objectAtIndex:index];
+            // NSLog(@"clickd %@ button",@(index));
+        };
+        NSArray *items =
+        @[MMItemMake([itemTitleArray objectAtIndex:0], MMItemTypeNormal, block),
+          MMItemMake([itemTitleArray objectAtIndex:1], MMItemTypeNormal, block)];
+        MMSheetView *sheetView=[[MMSheetView alloc]initWithTitle:@"支付方式" items:items];
+        [sheetView show];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+
     
 }
 
@@ -122,14 +126,7 @@
     }
 }
 
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex==2) {
-//        return;
-//    }
-//    _payInfo.text=[actionSheet buttonTitleAtIndex:buttonIndex];
-//    
-//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

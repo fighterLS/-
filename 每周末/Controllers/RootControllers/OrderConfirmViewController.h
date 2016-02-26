@@ -10,5 +10,5 @@
 
 @interface OrderConfirmViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *payInfo;
-
+@property (nonatomic, strong) Result *homePageModel;
 @end

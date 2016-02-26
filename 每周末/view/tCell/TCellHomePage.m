@@ -34,6 +34,12 @@
 }
 - (IBAction)colloctionBtnAction:(UIButton *)sender {
     sender.selected=!sender.selected;
+    if (sender.selected) {
+        [_homePage save];
+    }else
+    {
+        [_homePage deleteObject];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
