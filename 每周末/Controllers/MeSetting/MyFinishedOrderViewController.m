@@ -32,6 +32,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyOrderTableViewCell *vCell=[tableView dequeueReusableCellWithIdentifier:@"MyOrderTableViewCell" forIndexPath:indexPath];
+    vCell.statueLB.text=@"预定成功";
 //    if (indexPath.row%2==0) {
 //        vCell.backgroundColor=[UIColor clearColor];
 //    }else

@@ -234,7 +234,7 @@ const CGFloat BackGroupHeight =280;
         
         if ([activityModel.type isEqualToString:@"text"]) {
 
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
@@ -247,7 +247,7 @@ const CGFloat BackGroupHeight =280;
         CGFloat cellHeight=0.0;
 
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
@@ -260,7 +260,7 @@ const CGFloat BackGroupHeight =280;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-16];
+            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
@@ -349,12 +349,23 @@ const CGFloat BackGroupHeight =280;
     UIView *headView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
     headView.backgroundColor = [UIColor clearColor];
     
-    UIView *seperateView =  [[UIView alloc]initWithFrame:CGRectMake(8, height-2, kScreenWidth-8, 2)];
-    seperateView.backgroundColor =[UIColor colorWithHexString:@"f2f1f0"];
+    UIImageView *circleLeftIcon=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"详情圆圈"]];
+    circleLeftIcon.left=23;
+    circleLeftIcon.bottom=height;
+    [headView addSubview:circleLeftIcon];
+    
+    UIImageView *circleRightIcon=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"详情圆圈"]];
+    circleRightIcon.right=kScreenWidth-23;
+    circleRightIcon.bottom=height;
+    [headView addSubview:circleRightIcon];
+    
+    UIView *seperateView =  [[UIView alloc]initWithFrame:CGRectMake(circleLeftIcon.right, height-circleLeftIcon.width/2, kScreenWidth-circleLeftIcon.right*2, 0.5)];
+    seperateView.backgroundColor =[UIColor colorWithHexString:@"b39954"];
     [headView addSubview:seperateView];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, height-35, 180, 20)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, height-35, kScreenWidth-16, 20)];
     titleLabel.text=title;
+    titleLabel.textAlignment=NSTextAlignmentCenter;
     [titleLabel setFont:[UIFont systemFontOfSize:17]];
     titleLabel.textColor=[UIColor colorWithHexString:@"333333"];
     [headView addSubview:titleLabel];

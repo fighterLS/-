@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCollectionViewController : UITableViewController
+@interface MyCollectionViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *contentTableView;
 
 @end

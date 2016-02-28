@@ -59,7 +59,7 @@
             NSMutableString *localPath = [aPath mutableCopy];
             if (params) {
                 [localPath appendString:params.description];
-            }
+            }        
             [self GET:aPath parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

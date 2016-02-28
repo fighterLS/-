@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyOrderDetailViewController : UITableViewController
-
+@property (nonatomic, strong) Result *homePage;
 @end

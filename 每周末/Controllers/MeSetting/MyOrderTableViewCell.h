@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLB;
 @property (weak, nonatomic) IBOutlet UILabel *totalLB;
 @property (weak, nonatomic) IBOutlet UILabel *statueLB;
+@property (strong, nonatomic) Result *homePage;
 @end

@@ -8,8 +8,9 @@
 
 #import "MyCollectionViewController.h"
 #import "TCellMyCollection.h"
-@interface MyCollectionViewController ()
-
+#import "DetailPageViewController.h"
+@interface MyCollectionViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) NSMutableArray *contentListArray;
 @end
 
 @implementation MyCollectionViewController
@@ -17,19 +18,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.delegate=self;
+//    self.tableView.delegate=self;
+    _contentListArray=[[NSMutableArray alloc]initWithCapacity:0];
+      _contentTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [self sendRequest];
     // Do any additional setup after loading the view.
 }
-
+- (void)sendRequest
+{
+    [self.view beginLoading];
+    @weakify(self);
+    [HomePageModel getHomePageModelBlock:^(NSMutableArray *homePageArray, NSError *error) {
+        @strongify(self)
+        [self.view endLoading];
+        if (homePageArray.count>0) {
+            [_contentListArray addObjectsFromArray:homePageArray];
+              _contentTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+            [self.contentTableView reloadData];
+            self.contentTableView.delegate=self;
+            self.contentTableView.dataSource=self;
+//            [self.contentTableView.mj_header endRefreshing];
+//            [self.contentTableView.mj_footer endRefreshing];
+        }
+        [self.contentTableView configBlankPage:EaseBlankPageTypeTweet hasData:(homePageArray.count > 0) hasError:(error != nil) reloadButtonBlock:^(id sender) {
+            [self sendRequest];
+        }];
+    } withPage:0];
+    
+}
 #pragma mark -UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return _contentListArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TCellMyCollection *vCell=[tableView dequeueReusableCellWithIdentifier:@"TCellMyCollection" forIndexPath:indexPath];
-      return vCell;
+    vCell.homePage=[_contentListArray objectAtIndex:indexPath.row];
+    return vCell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -58,6 +84,9 @@
 // Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DetailPageViewController *viewController=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailPageViewController"];
+    viewController.homePageModel=[_contentListArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:viewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
