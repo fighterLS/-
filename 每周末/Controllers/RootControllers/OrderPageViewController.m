@@ -14,12 +14,15 @@
 @interface OrderPageViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *totalFeeLabel;
 @property (nonatomic, assign) NSInteger selectFeeType;
+@property (weak, nonatomic) IBOutlet UIButton *commitButton;
 @end
 
 @implementation OrderPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.commitButton.layer.masksToBounds=YES;
+    self.commitButton.layer.cornerRadius=2;
     self.contentTableview.delegate=self;
     self.contentTableview.dataSource=self;
     // Do any additional setup after loading the view.

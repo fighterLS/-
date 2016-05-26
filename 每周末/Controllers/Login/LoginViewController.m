@@ -19,7 +19,12 @@
 @implementation LoginViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.passwordText.layer.masksToBounds=YES;
+    self.passwordText.layer.cornerRadius=2;
+    self.phoneNumberText.layer.masksToBounds=YES;
+    self.phoneNumberText.layer.cornerRadius=2;
+    self.loadBtn.layer.masksToBounds=YES;
+    self.loadBtn.layer.cornerRadius=2;
     // Do any additional setup after loading the view.
 }
 - (IBAction)loginBtnAction:(UIButton *)sender {

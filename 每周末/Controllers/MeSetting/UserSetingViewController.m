@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userPicImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNickName;
 @property (weak, nonatomic) IBOutlet UILabel *telephoneNumLB;
+@property (weak, nonatomic) IBOutlet UIButton *quiteButton;
 
 @end
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"个人中心";
+    self.quiteButton.layer.masksToBounds=YES;
+    self.quiteButton.layer.cornerRadius=2;
     // Do any additional setup after loading the view.
 }
 

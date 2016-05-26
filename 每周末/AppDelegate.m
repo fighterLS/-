@@ -24,9 +24,9 @@
     [self initMMPopupView];
      self.storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self setupLoginViewController];
-//    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
-//    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
-//    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
+    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
     // Override point for customization after application launch.
     return YES;
 }

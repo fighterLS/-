@@ -22,6 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.phoneNumberText.layer.masksToBounds=YES;
+    self.phoneNumberText.layer.cornerRadius=2;
+    self.registerCode.layer.masksToBounds=YES;
+    self.registerCode.layer.cornerRadius=2;
+    self.passwordText.layer.masksToBounds=YES;
+    self.passwordText.layer.cornerRadius=2;
+    self.registerBtn.layer.masksToBounds=YES;
+    self.registerBtn.layer.cornerRadius=2;
+    self.sendCode.layer.masksToBounds=YES;
+    self.sendCode.layer.cornerRadius=2;
     // Do any additional setup after loading the view.
 }
 

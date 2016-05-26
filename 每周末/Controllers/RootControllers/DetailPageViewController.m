@@ -218,6 +218,7 @@ const CGFloat BackGroupHeight =280;
     {
         CGFloat cellHeight=0.0;
         if (indexPath.row==0) {
+        
             cellHeight=[_detailModel.title heightForFont:[UIFont systemFontOfSize:19] width:kScreenWidth-16];
             cellHeight+=180;
         }else
@@ -233,8 +234,8 @@ const CGFloat BackGroupHeight =280;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
-
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
+            ;
+            cellHeight=[activityModel.content heightForFont:[UIFont fontWithName:@"Kailasa" size:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
@@ -247,7 +248,7 @@ const CGFloat BackGroupHeight =280;
         CGFloat cellHeight=0.0;
 
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
+            cellHeight=[activityModel.content heightForFont:[UIFont fontWithName:@"Kailasa" size:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
@@ -260,7 +261,7 @@ const CGFloat BackGroupHeight =280;
         CGFloat cellHeight=0.0;
         
         if ([activityModel.type isEqualToString:@"text"]) {
-            cellHeight=[activityModel.content heightForFont:[UIFont systemFontOfSize:13] width:kScreenWidth-46];
+            cellHeight=[activityModel.content heightForFont:[UIFont fontWithName:@"Kailasa" size:13] width:kScreenWidth-46];
             cellHeight+=20;
         }else
         {
